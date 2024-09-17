@@ -1,4 +1,16 @@
 import Image from "next/image";
+import { GetStaticProps } from "next";
+import client from "@/utils/contentful";
+
+export const getStaticProps: GetStaticProps = async () => {
+  const response = await client.getEntries({
+    content_type: "page",
+  }); 
+
+  return { props: {
+    pages: response.items,
+  }};
+};
 
 export default function Home() {
   return (
