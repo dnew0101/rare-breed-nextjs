@@ -1,19 +1,14 @@
 import Image from "next/image";
-import { GetStaticProps } from "next";
-import client from "@/utils/contentful";
+import HeroSection from "@/components/HeroSection";
 
-export const getStaticProps: GetStaticProps = async () => {
-  const response = await client.getEntries({
-    content_type: "page",
-  }); 
 
-  return { props: {
-    pages: response.items,
-  }};
-};
+export default async function Home() {
+  return ( <>
+    {/* Hero Fragment */}
+    <>
+      <HeroSection />
+    </>
 
-export default function Home() {
-  return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <Image
@@ -24,6 +19,13 @@ export default function Home() {
           height={38}
           priority
         />
+
+    {/*Constructing frontend from here... phasing out website defaults after adding desired content*/}
+    
+    <div>
+      <h2></h2>
+    </div>
+
         <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
           <li className="mb-2">
             Get started by editing{" "}
@@ -109,5 +111,5 @@ export default function Home() {
         </a>
       </footer>
     </div>
-  );
-}
+  </>);
+};
