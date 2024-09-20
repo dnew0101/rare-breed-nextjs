@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from 'react';
-import { fetchHeroSection } from '../utils/fetchHeroSection';
+import { fetchHeroSection } from '../../backend/api/fetchHeroSection';
 
 const HeroSection = () => {
   const [heroData, setHeroData] = useState<any>(null);

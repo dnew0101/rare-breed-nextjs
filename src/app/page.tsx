@@ -1,5 +1,8 @@
 import Image from "next/image";
-import HeroSection from "@/components/HeroSection";
+import HeroSection from "@/components/homepage/HeroSection";
+import LosSection from "@/components/homepage/LosSection";
+import SamSection from "@/components/homepage/SamSection";
+import RayeSection from "@/components/homepage/RayeSection";
 
 
 export default async function Home() {
@@ -8,6 +11,16 @@ export default async function Home() {
     <>
       <HeroSection />
     </>
+    <>
+      <LosSection />
+    </>
+    <>
+      <SamSection />
+    </>
+    <>
+      <RayeSection />
+    </>
+
 
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">

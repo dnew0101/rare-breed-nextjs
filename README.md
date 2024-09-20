@@ -14,3 +14,6 @@ Frontend: NextJS + Typescript
 Backend: Contentful (CMS) + GraphQL (APIs)
 QA Engineering: Cypress (E2E) + Jest (unit testing)
 DevOps Protocol: GitLab CI/CD and Vercel
+
+## Notes
+- Using Next SEO "Head" Component... need to update to Metadata: https://nextjs.org/docs/app/building-your-application/upgrading/app-router-migration#step-3-migrating-nexthead

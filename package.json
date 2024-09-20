@@ -9,12 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@nextui-org/react": "^2.4.8",
     "contentful": "^10.15.1",
+    "framer-motion": "^11.5.4",
     "graphql": "^16.9.0",
     "graphql-request": "^7.1.0",
     "next": "14.2.11",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-feather": "^2.0.10"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.5.0",
