@@ -41,7 +41,7 @@ const Carousel: React.FC<CarouselProps> = ({
         <div className="overflow-hidden relative">
 
             {/* Photo container */}
-            <div className="flex transition-transform ease-out duration-800" style={{ transform: `translateX(-${currentPhoto * 100}%)` }}>
+            <div className="flex transition-transform ease-in-out duration-3000" style={{ transform: `translateX(-${currentPhoto * 100}%)` }}>
                 {items.map((photo, index) => (
                     <img key={photo.sys.id} src={photo.url} alt={`Photo ${index + 1}`} />
                 ))}
