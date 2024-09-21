@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { fetchArtist } from '../../backend/api/fetchArtist';
 import Carousel from './Carousel';
+import { Button } from '@nextui-org/react';
 
 const ArtistSection = () => {
   const [artistData, setArtistData] = useState<any>(null);
@@ -29,15 +30,24 @@ const ArtistSection = () => {
   if (error) return <div>Error fetching Artist Section...</div>;
 
   return (
-    <section className="artist-section relative w-full bg-gray-100 p-8">
-      <h2 className="text-3xl font-bold text-center">{artistData.title}</h2>
-      <p className="text-center mt-4">{artistData.bio}</p>
+    <section className="artist-section relative w-full h-[95vh]">
+      {/* Carousel Background */}
+      {artistData && <Carousel items={artistData.photosCollection.items} reverse={false} />}
 
-      {artistData && <Carousel items={artistData.photosCollection.items} autoSlide={true} />}
-
-      <div className="text-center mt-8">
-        <button className="btn btn-primary">{artistData.buttonText}</button>
+      {/* Slanted Section */}
+      <div className="absolute right-0 top-0 h-full w-full bg-zinc-900 opacity-95 text-white z-10 flex slanted-section">
+        <div className="p-[1.5em] flex flex-col justify-between h-full w-full">
+          <h2 className="text-7xl font-bold mb-4 ml-4 self-end">{artistData.name}</h2>
+          <p className="mb-4 flex-grow">{artistData.bio}</p>
+          <Button className="btn btn-primary self-end mb-4 mr-12">{artistData.buttonText}</Button>
+        </div>
       </div>
+
+      <style jsx>{`
+        .slanted-section {
+          clip-path: polygon(30% 0, 100% 0, 100% 100%, 70% 100%);
+        }
+      `}</style>
     </section>
   );
 };

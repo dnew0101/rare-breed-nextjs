@@ -1,77 +1,85 @@
-import { ChevronLeft, ChevronRight } from 'react-feather';
-import { useState, useEffect } from 'react';
-import { div } from 'framer-motion/client';
+import { useEffect, useRef } from 'react';
+import { Image } from '@nextui-org/react';
 
 interface Photo {
-    sys: {
-      id: string;
-    };
-    url: string;
-    title: string | null;
-    description: string | null;
+  sys: {
+    id: string;
+  };
+  url: string;
+  title: string | null;
+  description: string | null;
 }
 
 interface CarouselProps {
-    items: Photo[];
-    autoSlide?: boolean;
-    autoSlideInterval?: number;
+  items: Photo[];
+  reverse?: boolean; // reverse carousel direction
 }
 
-const Carousel: React.FC<CarouselProps> = ({ 
-    items,
-    autoSlide = false,
-    autoSlideInterval = 3000,
-}) => {
-    const [currentPhoto, setCurrentPhoto] = useState(0);
+const Carousel: React.FC<CarouselProps> = ({ items, reverse = false }) => {
+  const carouselRef = useRef<HTMLDivElement>(null);
 
-    // Function to go to the previous photo
-    const prev = () => 
-        setCurrentPhoto((currentPhoto) => (currentPhoto === 0 ? items.length - 1 : currentPhoto - 1));
-    
-    // Function to go to the next photo
-    const next = () => 
-        setCurrentPhoto((currentPhoto) => (currentPhoto === items.length - 1 ? 0 : currentPhoto + 1));
+  useEffect(() => {
+    const carousel = carouselRef.current;
+    if (!carousel) return;
 
-    useEffect(() => {
-        if (!autoSlide) return
-        const itemsInterval = setInterval(next, autoSlideInterval)
-        return () => clearInterval(itemsInterval);
-}, [])
-    return (
-        <div className="overflow-hidden relative">
+    const totalWidth = carousel.scrollWidth / 2; // Adjust for duplicated items
+    const animationDuration = totalWidth / 50; // Adjust speed here
 
-            {/* Photo container */}
-            <div className="flex transition-transform ease-in-out duration-3000" style={{ transform: `translateX(-${currentPhoto * 100}%)` }}>
-                {items.map((photo, index) => (
-                    <img key={photo.sys.id} src={photo.url} alt={`Photo ${index + 1}`} />
-                ))}
-            </div>
+    carousel.style.animationDuration = `${animationDuration}s`;
 
-            {/* Navigation System */}
-            <div className='absolute inset-0 flex items-center justify-between p-4'>
-                <button onClick={prev} className='p-1 rounded-full shadow bg-white/80 text-gray-800 hover:bg-white'>
-                    <ChevronLeft size={40} />
-                </button>
-                <button onClick={next} className='p-1 rounded-full shadow bg-white/80 text-gray-800 hover:bg-white'>
-                    <ChevronRight size={40} />
-                </button>
-            </div>
+    return () => {
+      carousel.style.animationDuration = '';
+    };
+  }, [items, reverse]);
 
-            {/* Pagination */}
-            <div className='absolute bottom-4 right-0 left-0'>
-                <div className='flex items-center justify-center gap-2'>
-                    {items.map((_, i) => (
-                        <div
-                            key={i} 
-                            className= {`
-                            transtion-all w-3 h-3 bg-white rounded-full
-                            ${currentPhoto === i ? "p-2" : "bg-opacity-50"}`
-                        } />
-                    ))}
-                </div>
-            </div>
-        </div>
-    );
+  return (
+    <div className="overflow-hidden h-[95vh] relative" style={{ whiteSpace: 'nowrap' }}>
+      <div
+        ref={carouselRef}
+        className={`flex h-full ${reverse ? 'reverse-scroll' : 'normal-scroll'}`}
+        style={{ width: `${items.length * 1000}px` }}
+      >
+        {items.concat(items).map((photo, index) => (
+          <Image
+            key={`${photo.sys.id}-${index}`}
+            src={photo.url}
+            alt={`Photo ${index + 1}`}
+            className="object-cover h-full"
+            style={{ flex: '0 0 auto', borderRadius: '0', width: `${1000 * items.length}px` }}
+          />
+        ))}
+      </div>
+      <style jsx>{`
+        @keyframes normalScroll {
+          0% {
+            transform: translateX(-50%);
+          }
+          100% {
+            transform: translateX(0%);
+          }
+        }
+        @keyframes reverseScroll {
+          0% {
+            transform: translateX(0%);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+        .flex {
+          display: inline-flex;
+          animation-timing-function: linear;
+          animation-iteration-count: infinite;
+        }
+        .normal-scroll {
+          animation-name: normalScroll;
+        }
+        .reverse-scroll {
+          animation-name: reverseScroll;
+        }
+      `}</style>
+    </div>
+  );
 };
 
 export default Carousel;
