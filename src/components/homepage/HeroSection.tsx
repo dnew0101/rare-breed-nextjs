@@ -34,8 +34,10 @@ const HeroSection = () => {
       style={{ backgroundImage: `url(${heroData.heroImage.url})` }}
     >
       <div className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-sm"></div>
-      <div className="absolute inset-0 flex flex-col items-center justify-start pt-48 sm:pt-48">
-        <h1 className="text-4xl font-bold text-white">{heroData.heroTitle}</h1>
+      <div className="absolute inset-0 flex flex-col items-center justify-start text-center top-16 sm:top-24">
+        <h1 className="text-8xl sm:text-9xl font-bold text-neutral-100 drop-shadow-lg" style={{fontFamily: 'Odachi, san-serif'}}>
+          {heroData.heroTitle}
+        </h1>
         <p className="text-white mt-4">{heroData.subtitle}</p>
       </div>
     </section>

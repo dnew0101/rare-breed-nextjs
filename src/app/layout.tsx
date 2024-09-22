@@ -6,6 +6,12 @@ import * as React from "react";
 import { NextUIProvider } from "@nextui-org/react";
 import Header from "@/components/global/Header";
 import Footer from "@/components/global/Footer";
+import { Montserrat } from "next/font/google";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+});
 
 const geistSans = localFont({
   src: "../fonts/GeistVF.woff",
@@ -31,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Meta />
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black`}>
+      <body className={`${montserrat.variable} antialiased bg-black`}>
         <NextUIProvider>
           <main className="dark text-foreground bg-background">
             <Header />

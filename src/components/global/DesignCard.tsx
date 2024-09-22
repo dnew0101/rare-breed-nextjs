@@ -16,7 +16,7 @@ const DesignCard: React.FC<DesignCardProps> = ({ image, designName, artistName, 
   return (
     <Card className='p-4'>
       <CardHeader className="flex pb-0 pt-2 px-4 flex-col text-center self-center sm:h-16">
-        <h4 className="font-bold text-large">"{designName}"</h4>
+        <h4 className="font-medium text-large">"{designName}"</h4>
         <h3 className="font-extralight text-default-400">by {artistName}</h3>
       </CardHeader>
       <CardBody className='flex'>
@@ -70,7 +70,7 @@ const DesignCard: React.FC<DesignCardProps> = ({ image, designName, artistName, 
       <Divider orientation='horizontal' className='mt-4'/>
 
       </CardFooter>
-      <Button radius="full" className='max-w-[60%] self-center p-4 m-1'>Contact</Button>
+      <Button radius="full" className='max-w-[60%] self-center font-light p-4 m-1'>Contact Now</Button>
     </Card> 
   );
 };

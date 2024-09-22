@@ -30,14 +30,14 @@ const ArtistSection = () => {
   if (error) return <div>Error fetching Artist Section...</div>;
 
   return (
-    <section className="artist-section relative w-full h-[95vh]">
+    <section className="artist-section relative w-full h-[95vh] m-0 p-0">
       {/* Carousel Background */}
       {artistData && <Carousel items={artistData.photosCollection.items} reverse={false} />}
 
       {/* Slanted Section */}
-      <div className="absolute right-0 top-0 h-full w-full bg-black opacity-90 text-white z-10 flex slanted-section">
+      <div className="absolute right-0 top-0 m-0 h-full w-full bg-black opacity-90 text-white z-10 flex slanted-section">
         <div className="p-[1.5em] flex flex-col justify-between h-full w-full">
-          <h2 className="text-7xl font-bold mb-4 ml-4 self-end">{artistData.name}</h2>
+          <h2 className="text-8xl font-bold mb-4 ml-4 self-end" style={{fontFamily: 'Odachi, san-serif'}}>{artistData.name}</h2>
           <p className="mb-4 flex-grow">{artistData.bio}</p>
           <Button className="btn btn-primary self-end mb-4 mr-12">{artistData.buttonText}</Button>
         </div>

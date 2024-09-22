@@ -3,23 +3,21 @@ import HeroSection from "@/components/homepage/HeroSection";
 import LosSection from "@/components/homepage/LosSection";
 import SamSection from "@/components/homepage/SamSection";
 import RayeSection from "@/components/homepage/RayeSection";
+import TestimonialSection from "@/components/homepage/TestimonialSection";
+import ContactSection from "@/components/homepage/ContactSection";
 
 
 export default async function Home() {
-  return ( <>
-    {/* Hero Fragment */}
-    <>
+  return ( 
+  <>
+    <main className="flex flex-col gap-0">
       <HeroSection />
-    </>
-    <>
       <LosSection />
-    </>
-    <>
       <SamSection />
-    </>
-    <>
       <RayeSection />
-    </>
+      <TestimonialSection />
+      <ContactSection />
+    </main>
 
 
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
