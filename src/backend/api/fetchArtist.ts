@@ -25,10 +25,6 @@ interface Artist {
 interface FetchArtistResponse {
     artist: Artist;
 }
-  
-interface GraphQLResponse {
-    artist: Artist;
-}
 
 const graphQLClient = new GraphQLClient(endpoint, {
     headers: {

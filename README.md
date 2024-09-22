@@ -4,8 +4,9 @@
 - STYLE: NextUI custom themes and components
 - PAGES: Statically generated pages (home) and dynamic/rendered pages (individual artist pages and "available designs" page).
 - TESTING: Conduct a unit testing protocol for "functional"/responsive components using Jest. Brainstorm E2E testing procedure with Cypress.
+- CONTAINERIZATION: Consider Docker image for containing website within a stable environment.
 
-- COMPLETED: Completed rudimentary homepage design. Connect Contentful CMS to project via GraphQL. Render components on frontend via content delivered through Contentful. Initialize and populate Next SEO Head Component.
+- COMPLETED: Completed rudimentary Available Designs page. Completed rudimentary homepage design. Connect Contentful CMS to project via GraphQL. Render components on frontend via content delivered through Contentful. Initialize and populate Next SEO Head Component.
 
 ## Overview
 This is the repository for Rare Breed Ink's website. I am tasked with creating a site that can functionally deliver a more streamlined user experience (than the current Squarespace model), while optimizing load times and the overall Google Lighthouse score. Currently, it is still in development. Expected release within October (just in time for Halloween)!

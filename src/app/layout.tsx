@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Meta />
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black`}>
         <NextUIProvider>
           <main className="dark text-foreground bg-background">
             <Header />

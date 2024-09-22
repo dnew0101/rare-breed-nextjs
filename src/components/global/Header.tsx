@@ -14,23 +14,23 @@ export default function Header() {
             About
           </Link>
         </NavbarItem>
-        <NavbarItem isActive>
+        <NavbarItem>
           <Link href="/artist/los/page.tsx" aria-current="page">
             Los
           </Link>
         </NavbarItem>
-        <NavbarItem isActive>
+        <NavbarItem>
           <Link href="/artist/sam/page.tsx" aria-current="page">
             Sam
           </Link>
         </NavbarItem>
-        <NavbarItem isActive>
+        <NavbarItem>
           <Link href="/artist/raye/page.tsx" aria-current="page">
             Raye
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="#">
+          <Link color="foreground" href="/available-designs">
             Available Designs
           </Link>
         </NavbarItem>

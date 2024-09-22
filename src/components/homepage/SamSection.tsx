@@ -35,7 +35,7 @@ const ArtistSection = () => {
       {artistData && <Carousel items={artistData.photosCollection.items} reverse={false} />}
 
       {/* Slanted Section */}
-      <div className="absolute right-0 top-0 h-full w-full bg-zinc-900 opacity-95 text-white z-10 flex slanted-section">
+      <div className="absolute right-0 top-0 h-full w-full bg-black opacity-90 text-white z-10 flex slanted-section">
         <div className="p-[1.5em] flex flex-col justify-between h-full w-full">
           <h2 className="text-7xl font-bold mb-4 ml-4 self-end">{artistData.name}</h2>
           <p className="mb-4 flex-grow">{artistData.bio}</p>
@@ -45,7 +45,7 @@ const ArtistSection = () => {
 
       <style jsx>{`
         .slanted-section {
-          clip-path: polygon(30% 0, 100% 0, 100% 100%, 70% 100%);
+          clip-path: polygon(10% 0, 100% 0, 100% 100%, 70% 100%);
         }
       `}</style>
     </section>
