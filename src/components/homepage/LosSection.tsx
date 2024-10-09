@@ -37,7 +37,7 @@ const ArtistSection = () => {
       {/* Slanted Section */}
       <div className="absolute left-0 top-0 h-full m-0 w-full bg-neutral-900 opacity-95 text-white z-10 flex slanted-section">
         <div className="p-[1.5em] flex flex-col justify-between h-[100%] self-start">
-          <h2 className="text-8xl font-bold mb-4 ml-4 self-start" style={{fontFamily: 'Odachi, san-serif'}}>{artistData.name}</h2>
+          <h1 className="text-8xl font-bold mb-4 ml-4 self-start">{artistData.name}</h1>
           <p className="mb-4">{artistData.bio}</p>
           <Button className="btn btn-primary self-start ml-12">{artistData.buttonText}</Button>
         </div>

@@ -20,21 +20,21 @@ const graphQLClient = new GraphQLClient(endpoint, {
 const query = gql`
     query GetHeroSection($id: String!) {
         heroSection(id: $id) {
-        sys {
-            id
-        }
-        contentfulMetadata {
-            tags {
-            id
-            name
+            sys {
+                id
             }
-        }
-        heroImage {
-            url
-            title
-        }
-        heroTitle
-        subtitle
+            contentfulMetadata {
+                tags {
+                id
+                name
+                }
+            }
+            heroImage {
+                url
+                title
+            }
+            heroTitle
+            subtitle
         }
     }
 `;

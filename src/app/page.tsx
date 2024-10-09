@@ -5,6 +5,7 @@ import SamSection from "@/components/homepage/SamSection";
 import RayeSection from "@/components/homepage/RayeSection";
 import TestimonialSection from "@/components/homepage/TestimonialSection";
 import ContactSection from "@/components/homepage/ContactSection";
+import FaqSection from "@/components/homepage/FaqSection";
 
 
 export default async function Home() {
@@ -17,6 +18,7 @@ export default async function Home() {
       <RayeSection />
       <TestimonialSection />
       <ContactSection />
+      <FaqSection />
     </main>
 
 

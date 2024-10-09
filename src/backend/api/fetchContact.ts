@@ -22,10 +22,13 @@ const graphQLClient = new GraphQLClient(endpoint, {
 const query = gql`
     query GetContactSection($id: String!) {
         contactSection(id: $id) {
-        sectionTitle
-        shopAddress
-        phoneNumber
-        mapEmbedCode
+            sys {
+                id
+            }
+            sectionTitle
+            shopAddress
+            phoneNumber
+            mapEmbedCode
         }
     }
 `;

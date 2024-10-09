@@ -39,8 +39,8 @@ const TestimonialSection = () => {
   }
 
   return (
-    <section className="testimonial-section bg-neutral-900 flex flex-col items-center h-screen">
-        <h1 className="text-8xl sm:text-9xl font-bold text-neutral-100 drop-shadow-lg mt-16 mb-28" style={{fontFamily: 'Odachi, san-serif'}}>Testimonials</h1>
+    <section className="testimonial-section bg-neutral-900 flex flex-col items-center h-screen p-8">
+        <h1 className="text-8xl sm:text-9xl font-bold text-neutral-100 drop-shadow-lg mt-16 mb-28">Testimonials</h1>
       <div
         className={`testimonial-card bg-neutral-100 justify-center w-[70vw] sm:max-w-[50%] p-8 rounded-lg shadow-lg transition-opacity duration-1000 ${
           visible ? 'opacity-100' : 'opacity-0'

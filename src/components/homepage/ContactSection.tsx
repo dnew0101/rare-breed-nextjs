@@ -18,7 +18,7 @@ const ContactSection = () => {
   useEffect(() => {
     const getContactSectionData = async () => {
       try {
-        const data = await fetchContactSection('YOUR_CONTACT_SECTION_ID');
+        const data = await fetchContactSection(`${process.env.NEXT_PUBLIC_CONTENTFUL_CONTACT_ID}`);
         setContactSectionData(data);
         setLoading(false);
       } catch (error) {
@@ -34,8 +34,8 @@ const ContactSection = () => {
   if (error) return <div>{error}</div>;
 
   return (
-    <section className="location-section bg-neutral-950 text-neutral-100 p-8">
-      <h2 className="text-2xl font-bold mb-4">{contactSectionData?.sectionTitle}</h2>
+    <section className="location-section bg-neutral-950 text-neutral-100 p-8 flex flex-col items-center pb-32">
+      <h1 className="text-8xl font-bold mt-16 mb-28">{contactSectionData?.sectionTitle}</h1>
       <p className="mb-2">Address: {contactSectionData?.shopAddress}</p>
       <p className="mb-2">Phone: {contactSectionData?.phoneNumber}</p>
       <div className="map-container mt-4" dangerouslySetInnerHTML={{ __html: contactSectionData?.mapEmbedCode || '' }} />
