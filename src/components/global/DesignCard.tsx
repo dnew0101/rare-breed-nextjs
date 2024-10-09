@@ -16,7 +16,7 @@ const DesignCard: React.FC<DesignCardProps> = ({ image, designName, artistName, 
   return (
     <Card className='p-4'>
       <CardHeader className="flex pb-0 pt-2 px-4 flex-col text-center self-center sm:h-16">
-        <h4 className="font-medium text-large">"{designName}"</h4>
+        <h4 className="font-medium text-large">&quot;{designName}&quot;</h4>
         <h3 className="font-extralight text-default-400">by {artistName}</h3>
       </CardHeader>
       <CardBody className='flex'>
@@ -51,12 +51,12 @@ const DesignCard: React.FC<DesignCardProps> = ({ image, designName, artistName, 
         >
             <PopoverTrigger>
               <Button radius="full" className='mt-4 font-thin text-default-600'>
-                Read {artistName}'s notes
+                Read {artistName}&apos;s notes
               </Button>
             </PopoverTrigger>
             <PopoverContent>
               <small className="text-xs text-default-500">
-                "{notes}"
+              &quot;{notes}&quot;
               </small>
             </PopoverContent>
           </Popover>

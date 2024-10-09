@@ -6,8 +6,10 @@ import Carousel from './Carousel';
 import { Button } from '@nextui-org/react';
 
 const ArtistSection = () => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [artistData, setArtistData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [error, setError] = useState<any>(null);
 
   useEffect(() => {

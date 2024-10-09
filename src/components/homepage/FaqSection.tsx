@@ -42,10 +42,18 @@ const FaqSection: React.FC = () => {
         <span className="block sm:hidden">F.A.Q.s</span>
         <span className="hidden sm:block">Frequently Asked Questions</span>
       </h1>
-
-      <Tabs className='mb-8' onChange={(e) => setActiveTab(tags[(e as any).index])}>
+      <Tabs
+        size='md'
+        aria-label='FAQ Tabs'
+        selectedKey={activeTab}
+        onSelectionChange={(key) => setActiveTab(key as string)}
+      >
         {tags.map((tag, index) => (
-          <Tab key={index} title={tag}>
+          <Tab 
+            key={index} 
+            title={tag}
+            className={activeTab === tag ? 'active-tab-class' : ''}
+          >
             <Accordion variant='bordered' className='w-[90vw] sm:w-[70vw]'
                 motionProps={{
                     variants: {

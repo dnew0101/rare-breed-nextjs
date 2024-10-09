@@ -4,8 +4,12 @@ import { useEffect, useState } from 'react';
 import { fetchHeroSection } from '../../backend/api/fetchHeroSection';
 
 const HeroSection = () => {
+  
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [heroData, setHeroData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [error, setError] = useState<any>(null);
 
   useEffect(() => {

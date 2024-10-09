@@ -46,7 +46,7 @@ const TestimonialSection = () => {
           visible ? 'opacity-100' : 'opacity-0'
         }`}
       >
-        <p className="text-lg text-center text-neutral-900 italic">"{testimonials[currentTestimonial].testimonial}"</p>
+        <p className="text-lg text-center text-neutral-900 italic">&quot;{testimonials[currentTestimonial].testimonial}&quot;</p>
         <p className="text-sm text-center mt-4 text-neutral-800">- {testimonials[currentTestimonial].clientName}</p>
       </div>
     </section>
