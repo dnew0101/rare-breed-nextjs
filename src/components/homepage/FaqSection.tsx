@@ -2,12 +2,16 @@
 
 import { useEffect, useState } from 'react';
 import fetchFaqs from '../../backend/api/fetchFaqs';
-import { Accordion, AccordionItem, Tabs, Tab } from '@nextui-org/react';
+import { Accordion, AccordionItem, Tabs, Tab, Divider } from '@nextui-org/react';
+
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { Document } from '@contentful/rich-text-types';
+import { div } from 'framer-motion/client';
 
 interface Faq {
   questionTitle: string;
   tag: string;
-  answer: string;
+  answer: { json: Document } | null;
 }
 
 const FaqSection: React.FC = () => {
@@ -34,7 +38,8 @@ const FaqSection: React.FC = () => {
   if (loading) return <div>Loading FAQs...</div>;
   if (error) return <div>{error}</div>;
 
-  const tags = Array.from(new Set(faqs.map(faq => faq.tag)));
+  let tags = Array.from(new Set(faqs.map(faq => faq.tag)));
+  tags = tags.sort((a, b) => (a === 'General' ? -1 : b === 'General' ? 1 : 0));
 
   return (
     <section className="flex flex-col text-center items-center faq-section bg-neutral-900 text-neutral-100 p-8 mb-10">
@@ -49,58 +54,62 @@ const FaqSection: React.FC = () => {
         onSelectionChange={(key) => setActiveTab(key as string)}
       >
         {tags.map((tag, index) => (
-          <Tab 
-            key={index} 
-            title={tag}
-            className={activeTab === tag ? 'active-tab-class' : ''}
-          >
-            <Accordion variant='bordered' className='w-[90vw] sm:w-[70vw]'
-                motionProps={{
-                    variants: {
-                    enter: {
-                        y: 0,
-                        opacity: 1,
-                        height: "auto",
-                        transition: {
-                        height: {
-                            type: "spring",
-                            stiffness: 500,
-                            damping: 30,
-                            duration: 1,
-                        },
-                        opacity: {
-                            easings: "ease",
-                            duration: 1,
-                        },
-                        },
-                    },
-                    exit: {
-                        y: -10,
-                        opacity: 0,
-                        height: 0,
-                        transition: {
-                        height: {
-                            easings: "ease",
-                            duration: 0.25,
-                        },
-                        opacity: {
-                            easings: "ease",
-                            duration: 0.3,
-                        },
-                        },
-                    },
-                    },
-                }}
+            <Tab 
+              key={index} 
+              title={tag}
+              className={activeTab === tag ? 'active-tab-class' : ''}
             >
-              {faqs
-                .filter(faq => faq.tag === tag)
-                .map((faq, index) => (
-                  <AccordionItem key={index} title={faq.questionTitle} className='font-serif'>
-                    <p>{faq.answer}</p>
-                  </AccordionItem>
-                ))}
-            </Accordion>
-          </Tab>
+              <Accordion variant='bordered' className='w-[90vw] sm:w-[70vw]'
+                  motionProps={{
+                      variants: {
+                      enter: {
+                          y: 0,
+                          opacity: 1,
+                          height: "auto",
+                          transition: {
+                          height: {
+                              type: "spring",
+                              stiffness: 500,
+                              damping: 30,
+                              duration: 1,
+                          },
+                          opacity: {
+                              easings: "ease",
+                              duration: 1,
+                          },
+                          },
+                      },
+                      exit: {
+                          y: -10,
+                          opacity: 0,
+                          height: 0,
+                          transition: {
+                          height: {
+                              easings: "ease",
+                              duration: 0.25,
+                          },
+                          opacity: {
+                              easings: "ease",
+                              duration: 0.3,
+                          },
+                          },
+                      },
+                      },
+                  }}
+              >
+                {faqs
+                  .filter(faq => faq.tag === tag)
+                  .map((faq, index) => (
+                    <AccordionItem key={index} title={faq.questionTitle} className='font-serif'>
+                      {faq.answer ? (
+                        <p>{documentToReactComponents(faq.answer.json)}</p>
+                      ) : (
+                        <p>No answer available at this time.</p>
+                      )}
+                    </AccordionItem>
+                  ))}
+              </Accordion>
+            </Tab>
         ))}
       </Tabs>
     </section>

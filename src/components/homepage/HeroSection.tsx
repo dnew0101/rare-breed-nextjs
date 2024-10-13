@@ -17,7 +17,7 @@ const HeroSection = () => {
       try {
         
         // Fetch the Hero Section data using the fetchHeroSection function
-        const heroContent = await fetchHeroSection(`${process.env.NEXT_PUBLIC_CONTENTFUL_MOBILE_HERO_ID}`);
+        const heroContent = await fetchHeroSection(`${process.env.NEXT_PUBLIC_CONTENTFUL_HERO_ID}`);
         setHeroData(heroContent);
         setLoading(false);
       } catch (error) {

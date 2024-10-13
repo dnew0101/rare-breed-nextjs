@@ -1,11 +1,14 @@
 import { GraphQLClient, gql } from 'graphql-request';
+import { Document } from '@contentful/rich-text-types';
 
 const endpoint = `https://graphql.contentful.com/content/v1/spaces/${process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID}`;
 
 interface FaqSection {
   questionTitle: string;
   tag: string;
-  answer: string;
+  answer: {
+    json: Document;
+  } | null;
 }
 
 interface FaqSectionCollection {
@@ -28,15 +31,22 @@ const query = gql`
       items {
         questionTitle
         tag
-        answer
+        answer {
+          json
+        }
       }
     }
   }
 `;
 
-const fetchFaqs = async () => {
+const fetchFaqs = async (): Promise<FaqSection[]> => {
+  try {
     const data: FaqSectionResponse = await graphQLClient.request(query);
-    return data.faQsCollection.items || [];
+    return data.faQsCollection.items;
+  } catch (error) {
+    console.error('Error fetching FAQs:', error);
+    throw error;
+  }
 };
 
 export default fetchFaqs;
