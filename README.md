@@ -1,8 +1,13 @@
 ## TODO:
-- PRIORITY: Separate new branch for converting client-side components to server-side components per Next 14 standards; SSG and SSR.
-- UX: After merging priority branch, create new branch for A/B testing of site; artist portfolio pages?
+- PRIORITY: Separate new branch for converting client-side components to server-side components per Next 14 standards; SSG and SSR. Test FCP speed with Google Lighthouse.
+
+- UX.1: Consolidate ARTIST SECTION components. Centralize font placement on slanted section for desktop; introduce card design for artist sections on mobile, as it is more thematically modern.
+
+- UX.2: After merging PRIORITY branch and patching UX.1, create new branch for A/B testing of site; artist portfolio pages?
+
 - TESTING: Brainstorm E2E testing procedure with Cypress. Continue to monitor unit tests as changes are made.
-- CONTAINERIZATION: Consider Docker image for containing website within a stable environment... still haven't decide XD
+
+- CONTAINERIZATION: Consider Docker image for containing website within a stable environment... still haven't decide haha.
 
 
 ## Overview
