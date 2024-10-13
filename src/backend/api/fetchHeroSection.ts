@@ -20,15 +20,6 @@ const graphQLClient = new GraphQLClient(endpoint, {
 const query = gql`
     query GetHeroSection($id: String!) {
         heroSection(id: $id) {
-            sys {
-                id
-            }
-            contentfulMetadata {
-                tags {
-                id
-                name
-                }
-            }
             heroImage {
                 url
                 title
@@ -41,6 +32,6 @@ const query = gql`
 
 export const fetchHeroSection = async (id: string) => {
     const variables = { id };
-    const data: GraphQLResponse = await graphQLClient.request(query, variables);
+    //const data: GraphQLResponse = await graphQLClient.request(query, variables);
     return data.heroSection;
 };

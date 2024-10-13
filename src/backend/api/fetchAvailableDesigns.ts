@@ -48,7 +48,7 @@ const query = gql`
 `;
 
 const fetchAvailableDesigns = async (): Promise<AvailableDesign[]> => {
-    const data = await graphQLClient.request<FetchAvailableDesignsResponse>(query);
+    //const data = await graphQLClient.request<FetchAvailableDesignsResponse>(query);
     return data.availableDesignsPostCollection.items;
 };
   

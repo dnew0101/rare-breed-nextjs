@@ -56,6 +56,6 @@ const query = gql`
 
 export const fetchArtist = async (id: string): Promise<FetchArtistResponse> => {
     const variables = { id };
-    const data = await graphQLClient.request<{ artist: FetchArtistResponse }>(query, variables);
+    // const data = await graphQLClient.request<{ artist: FetchArtistResponse }>(query, variables);
     return data.artist;
 };

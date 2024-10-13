@@ -41,7 +41,7 @@ const query = gql`
 
 const fetchFaqs = async (): Promise<FaqSection[]> => {
   try {
-    const data: FaqSectionResponse = await graphQLClient.request(query);
+    //const data: FaqSectionResponse = await graphQLClient.request(query);
     return data.faQsCollection.items;
   } catch (error) {
     console.error('Error fetching FAQs:', error);
