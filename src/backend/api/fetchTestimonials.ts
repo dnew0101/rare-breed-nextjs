@@ -33,8 +33,8 @@ const query = gql`
 `;
 
 const fetchTestimonials = async (): Promise<ClientTestimonials[]> => {
-    //const data = await graphQLClient.request<FetchTestimonialsResponse>(query);
+    const data = await graphQLClient.request<FetchTestimonialsResponse>(query);
     return data.clientTestimonialsCollection.items;
 };
-  
+
 export default fetchTestimonials;

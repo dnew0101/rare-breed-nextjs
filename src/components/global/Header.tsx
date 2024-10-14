@@ -29,11 +29,6 @@ export default function Header() {
             Available Designs
           </Link>
         </NavbarItem>
-        <NavbarItem>
-          <Link color="foreground" href="/about/page.tsx">
-            About
-          </Link>
-        </NavbarItem>
       </NavbarContent>
     </Navbar>
   );

@@ -43,7 +43,7 @@ const FaqSection: React.FC = () => {
 
   return (
     <section className="flex flex-col text-center items-center faq-section bg-neutral-900 text-neutral-100 p-8 mb-10">
-      <h1 className="text-8xl font-bold mt-12 mb-28">
+      <h1 className="text-7xl font-bold mt-12 mb-16">
         <span className="block sm:hidden">F.A.Q.s</span>
         <span className="hidden sm:block">Frequently Asked Questions</span>
       </h1>
@@ -59,7 +59,7 @@ const FaqSection: React.FC = () => {
               title={tag}
               className={activeTab === tag ? 'active-tab-class' : ''}
             >
-              <Accordion variant='bordered' className='w-[90vw] sm:w-[70vw]'
+              <Accordion variant='bordered' className='w-[90vw] sm:w-[70vw] mt-8 mb-8'
                   motionProps={{
                       variants: {
                       enter: {
@@ -100,7 +100,7 @@ const FaqSection: React.FC = () => {
                 {faqs
                   .filter(faq => faq.tag === tag)
                   .map((faq, index) => (
-                    <AccordionItem key={index} title={faq.questionTitle} className='font-serif'>
+                    <AccordionItem key={index} title={faq.questionTitle} className='font-montserrat'>
                       {faq.answer ? (
                         <p>{documentToReactComponents(faq.answer.json)}</p>
                       ) : (

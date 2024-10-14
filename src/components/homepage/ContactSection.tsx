@@ -34,11 +34,22 @@ const ContactSection = () => {
   if (error) return <div>{error}</div>;
 
   return (
-    <section className="location-section bg-neutral-950 text-neutral-100 p-8 flex flex-col items-center pb-32">
-      <h1 className="text-8xl font-bold mt-16 mb-28">{contactSectionData?.sectionTitle}</h1>
-      <p className="mb-2">Address: {contactSectionData?.shopAddress}</p>
-      <p className="mb-2">Phone: {contactSectionData?.phoneNumber}</p>
-      <div className="map-container mt-4" dangerouslySetInnerHTML={{ __html: contactSectionData?.mapEmbedCode || '' }} />
+    <section className="location-section bg-neutral-950 text-neutral-100 p-8 flex flex-col items-center">
+      <h1 className="text-7xl font-bold mt-12 mb-16">{contactSectionData?.sectionTitle}</h1>
+
+      <div className='justify-center text-center'>
+        <p className="mb-2">
+          Phone: <a href={`tel:${contactSectionData?.phoneNumber}`} className="text-blue-500 underline">{contactSectionData?.phoneNumber}</a>
+        </p>
+        <p className="mb-2">Address: {contactSectionData?.shopAddress}</p>
+        <p>Appointment Only!</p>
+      </div>
+
+      <div 
+        className="flex map-container mt-4 rounded-lg justify-self-center mb-4"
+        style={{ overflow: 'hidden', width: '100%', maxWidth: '800px', height: '500px' }}
+        dangerouslySetInnerHTML={{ __html: contactSectionData?.mapEmbedCode || '' }}
+      />
     </section>
   );
 };

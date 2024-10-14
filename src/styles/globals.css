@@ -23,6 +23,22 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat-Italic';
+  src: url('../fonts/Montserrat-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -38,11 +54,15 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-montserrat);
 }
 
 h1 {
   font-family: 'TrueLies';
+}
+
+.custom-background {
+  background-color: (0,0,0,0.92);
 }
 
 @layer utilities {

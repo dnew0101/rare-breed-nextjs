@@ -3,7 +3,9 @@
 
 - UX.1: Consolidate ARTIST SECTION components. Centralize font placement on slanted section for desktop; introduce card design for artist sections on mobile, as it is more thematically modern.
 
-- UX.2: After merging PRIORITY branch and patching UX.1, create new branch for A/B testing of site; artist portfolio pages?
+- UX.2: Polish recyclable Layout components; header and footer.
+
+- UX.3: After merging PRIORITY branch and patching UX.1/UX.2, create new branch for A/B testing of site; artist portfolio pages? Consider hamburger/modal/sidebar for header.
 
 - TESTING: Brainstorm E2E testing procedure with Cypress. Continue to monitor unit tests as changes are made.
 
@@ -20,5 +22,6 @@ QA Engineering: Cypress (E2E) + Jest (unit testing)
 DevOps Protocol: GitLab CI/CD and Vercel
 
 ## Notes
-- GraphQL requests disabled to preserve API calls while developing. Utilizing test data for frontend engineering.
+- GraphQL requests DISABLED to preserve API calls while developing. Utilizing test data for frontend engineering.
+
 - Using Next SEO "Head" Component... need to update to Metadata: https://nextjs.org/docs/app/building-your-application/upgrading/app-router-migration#step-3-migrating-nexthead

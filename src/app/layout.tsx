@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-// import localFont from "next/font/local";
 import "../styles/globals.css";
 import Meta from "@/components/global/Meta";
 import * as React from "react";
@@ -8,8 +7,16 @@ import Header from "@/components/global/Header";
 import Footer from "@/components/global/Footer";
 import { Montserrat } from "next/font/google";
 
+import '@fortawesome/fontawesome-svg-core/styles.css';
+import { config } from '@fortawesome/fontawesome-svg-core';
+config.autoAddCss = false; // Prevent FontAwesome from adding its CSS automatically
+
+
+
 const montserrat = Montserrat({
   subsets: ["latin"],
+  weight: ['100', '200', '300', '400'],
+  style: ['normal', 'italic'],
   variable: "--font-montserrat",
 });
 
@@ -41,10 +48,10 @@ export default function RootLayout({
         <NextUIProvider>
           <main className="dark text-foreground bg-background">
             <Header />
-              {children}
+            {children}
             <Footer />
           </main>
-        </NextUIProvider> 
+        </NextUIProvider>
       </body>
     </html>
   );

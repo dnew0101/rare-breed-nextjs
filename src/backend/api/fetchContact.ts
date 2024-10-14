@@ -35,6 +35,6 @@ const query = gql`
 
 export const fetchContactSection = async (id: string) => {
     const variables = { id };
-    //const data: ContactSectionResponse = await graphQLClient.request(query, variables);
+    const data: ContactSectionResponse = await graphQLClient.request(query, variables);
     return data.contactSection;
 };

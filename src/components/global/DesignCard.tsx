@@ -1,6 +1,6 @@
 // components/DesignCard.tsx
-import React from 'react';
-import { Card, CardHeader, CardFooter, CardBody, Image, Button, Divider, Chip, Popover, PopoverTrigger, PopoverContent } from '@nextui-org/react';
+import React, { useState } from 'react';
+import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Card, CardHeader, CardFooter, CardBody, Image, Button, Divider, Chip, Popover, PopoverTrigger, PopoverContent, useDisclosure } from '@nextui-org/react';
 
 interface DesignCardProps {
   image: string;
@@ -12,12 +12,12 @@ interface DesignCardProps {
 }
 
 const DesignCard: React.FC<DesignCardProps> = ({ image, designName, artistName, price, size, notes }) => {
-
+  
   return (
     <Card className='p-4'>
       <CardHeader className="flex pb-0 pt-2 px-4 flex-col text-center self-center sm:h-16 sm:px-2">
         <h4 className="font-medium text-large">&quot;{designName}&quot;</h4>
-        <h3 className="font-extralight text-default-400">by {artistName}</h3>
+        <h3 className="font-light text-default-500">by {artistName}</h3>
       </CardHeader>
       <CardBody className='flex'>
           <div className='flex image-container w-full h-full overflow-hidden justify-center items-center'>
@@ -50,7 +50,7 @@ const DesignCard: React.FC<DesignCardProps> = ({ image, designName, artistName, 
           }}
         >
             <PopoverTrigger>
-              <Button radius="full" className='mt-4 font-thin text-default-600'>
+              <Button radius="full" className='mt-4 font-normal text-default-600'>
                 Read {artistName}&apos;s notes
               </Button>
             </PopoverTrigger>
@@ -61,15 +61,15 @@ const DesignCard: React.FC<DesignCardProps> = ({ image, designName, artistName, 
             </PopoverContent>
           </Popover>
         ) : (
-          <div className='text-center text-xs text-default-300 font-light mt-7 mb-3'>
+          <div className='text-center text-xs text-default-400 font-light mt-7 mb-3'>
             No notes available.
           </div>
         )}
 
 
       <Divider orientation='horizontal' className='mt-4'/>
-
       </CardFooter>
+
       <Button radius="full" className='max-w-[60%] self-center font-light p-4 m-1'>Contact Now</Button>
     </Card> 
   );

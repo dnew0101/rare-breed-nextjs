@@ -32,6 +32,6 @@ const query = gql`
 
 export const fetchHeroSection = async (id: string) => {
     const variables = { id };
-    //const data: GraphQLResponse = await graphQLClient.request(query, variables);
+    const data: GraphQLResponse = await graphQLClient.request(query, variables);
     return data.heroSection;
 };

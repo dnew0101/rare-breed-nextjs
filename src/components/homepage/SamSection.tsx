@@ -3,7 +3,9 @@
 import { useEffect, useState } from 'react';
 import { fetchArtist } from '../../backend/api/fetchArtist';
 import Carousel from './Carousel';
-import { Button } from '@nextui-org/react';
+import { Button, Divider } from '@nextui-org/react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 const ArtistSection = () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -26,22 +28,35 @@ const ArtistSection = () => {
     };
 
     fetchArtistData();
-  });
+  }, []);
 
   if (loading) return <div>Loading Artist Section...</div>;
   if (error) return <div>Error fetching Artist Section...</div>;
 
   return (
-    <section className="artist-section relative w-full h-[95vh] m-0 p-0">
+    <section className="artist-section relative w-full h-[95vh] m-0 p-0 overflow-hidden">
       {/* Carousel Background */}
       {artistData && <Carousel items={artistData.photosCollection.items} reverse={false} />}
 
       {/* Slanted Section */}
-      <div className="absolute right-0 top-0 m-0 h-full w-full bg-black opacity-90 text-white z-10 flex slanted-section">
-        <div className="p-[1.5em] flex flex-col justify-between h-full w-full">
-          <h1 className="text-8xl font-bold mb-4 ml-4 self-end">{artistData.name}</h1>
-          <p className="mb-4 flex-grow">{artistData.bio}</p>
-          <Button className="btn btn-primary self-end mb-4 mr-12">{artistData.buttonText}</Button>
+      <div className="slanted-section flex flex-row-reverse absolute top-0 m-0 h-[101%] w-full bg-black opacity-90 text-white z-10">
+        <div className="divide-container flex flex-col mb-6 h-[70%] w-[38%] justify-center self-center">
+
+          <div className='content-container flex flex-col mr-6 mt-2 h-auto w-[90%] items-center text-center'>
+          <h1 className="text-7xl font-bold mb-14 self-center">{artistData.name}</h1>
+
+            <Divider className="mb-6 max-w-[85%]" />
+                <p>Specializes in anime, horror, and fine-line pieces.</p>   
+                <p>{artistData.bio}</p>   
+            <Divider className="mt-6 max-w-[85%]" /> 
+
+            <div className='contact-grouping flex flex-row w-[100%] lg:w-[50%] justify-around items-center mt-10'>
+                <a href="https://www.instagram.com/lovelyinink_" target="_blank" rel="noopener noreferrer">
+                  <FontAwesomeIcon icon={faInstagram} size="2x"/>
+                </a>
+            </div> 
+
+          </div> 
         </div>
       </div>
 
