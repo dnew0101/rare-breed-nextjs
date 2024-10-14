@@ -1,6 +1,6 @@
 // components/DesignCard.tsx
-import React, { useState } from 'react';
-import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Card, CardHeader, CardFooter, CardBody, Image, Button, Divider, Chip, Popover, PopoverTrigger, PopoverContent, useDisclosure } from '@nextui-org/react';
+import React from 'react';
+import { Card, CardHeader, CardFooter, CardBody, Image, Button, Divider, Chip, Popover, PopoverTrigger, PopoverContent } from '@nextui-org/react';
 
 interface DesignCardProps {
   image: string;

@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { fetchArtist } from '../../backend/api/fetchArtist';
 import Carousel from './Carousel';
-import { Button, Divider } from '@nextui-org/react';
+import { Divider } from '@nextui-org/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 

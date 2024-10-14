@@ -2,11 +2,10 @@
 
 import { useEffect, useState } from 'react';
 import fetchFaqs from '../../backend/api/fetchFaqs';
-import { Accordion, AccordionItem, Tabs, Tab, Divider } from '@nextui-org/react';
+import { Accordion, AccordionItem, Tabs, Tab } from '@nextui-org/react';
 
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { Document } from '@contentful/rich-text-types';
-import { div } from 'framer-motion/client';
 
 interface Faq {
   questionTitle: string;
