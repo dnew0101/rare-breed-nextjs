@@ -35,7 +35,7 @@ const ContactSection = () => {
 
   return (
     <section className="location-section bg-neutral-950 text-neutral-100 p-8 flex flex-col items-center">
-      <h1 className="text-7xl font-bold mt-12 mb-16">{contactSectionData?.sectionTitle}</h1>
+      <h1 className="text-7xl font-bold mt-12 mb-10">{contactSectionData?.sectionTitle}</h1>
 
       <div className='justify-center text-center'>
         <p className="mb-2">

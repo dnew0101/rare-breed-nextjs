@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 import { fetchHeroSection } from '../../backend/api/fetchHeroSection';
 
 const HeroSection = () => {
@@ -33,11 +34,20 @@ const HeroSection = () => {
   if (error) return <div>Error fetching Hero Section...</div>;
 
   return (
-    <section
-      className="hero-section relative w-full h-screen bg-cover bg-center"
-      style={{ backgroundImage: `url(${heroData.heroImage.url})` }}
-    >
-      <div className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-sm"></div>
+    <section className="hero-section relative w-full h-screen overflow-hidden">
+      <div className="absolute inset-0">
+        <Image
+          src={heroData.heroImage.url}
+          alt={heroData.heroImage.description}
+          layout="fill"
+          objectFit="cover"
+          quality={70}
+          priority
+        />
+      </div>
+
+
+      <div className="absolute inset-0 bg-black bg-opacity-75 backdrop-blur-sm"></div>
       <div className="absolute inset-0 flex flex-col items-center justify-start text-center top-16 sm:top-24">
         <h1 className="text-8xl sm:text-9xl font-bold text-neutral-100 drop-shadow-lg">
           {heroData.heroTitle}

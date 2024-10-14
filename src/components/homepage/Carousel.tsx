@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { Image } from '@nextui-org/react';
+import NextImage from "next/image";
 
 interface Photo {
   sys: {
@@ -33,7 +34,7 @@ const Carousel: React.FC<CarouselProps> = ({ items, reverse = false }) => {
   }, [items, reverse]);
 
   return (
-    <div className="overflow-hidden h-[95vh] relative" style={{ whiteSpace: 'nowrap' }}>
+    <div className="overflow-hidden h-[100%] relative" style={{ whiteSpace: 'nowrap' }}>
       <div
         ref={carouselRef}
         className={`flex h-full ${reverse ? 'reverse-scroll' : 'normal-scroll'}`}
@@ -41,11 +42,14 @@ const Carousel: React.FC<CarouselProps> = ({ items, reverse = false }) => {
       >
         {items.concat(items).map((photo, index) => (
           <Image
+            as={NextImage}
             key={`${photo.sys.id}-${index}`}
             src={photo.url}
             alt={`Photo ${index + 1}`}
+            height={900}
+            width={items.length * 1000}
             className="object-cover h-full"
-            style={{ flex: '0 0 auto', borderRadius: '0', width: `${1000 * items.length}px` }}
+            style={{ flex: '0 0 auto', borderRadius: '0' }}
           />
         ))}
       </div>

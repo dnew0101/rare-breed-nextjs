@@ -3,10 +3,12 @@ import RBLogo from "./RBLogo";
 
 export default function Header() {
   return (
-    <Navbar className="bg-black opacity-80 text-3xl" style={{fontFamily: 'TrueLies, san-serif'}}>
-      <NavbarBrand>
-        <RBLogo />
-        <Link className="pl-2 font-bold text-inherit" href="/">Rare Breed Ink</Link>
+    <Navbar className="bg-black opacity-80 text-3xl ml-1 mr-1" style={{ fontFamily: 'TrueLies, sans-serif' }}>
+      <NavbarBrand className="items-center">
+        <Link className="pl-2 font-bold text-inherit" href="/">
+          <RBLogo />
+          Rare Breed Ink
+        </Link>
       </NavbarBrand>
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem>

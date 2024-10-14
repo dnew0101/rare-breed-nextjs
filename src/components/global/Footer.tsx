@@ -1,5 +1,6 @@
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 
 const Footer = () => {
     return (
@@ -14,6 +15,12 @@ const Footer = () => {
               </a>
               <a href="http://m.facebook.com/Rarebreedink66/" target="_blank" rel="noopener noreferrer">
                 <FontAwesomeIcon icon={faFacebook} size="2x"/>
+              </a>
+              <a href="Rarebreedink206@gmail.com" target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon icon={faEnvelope} size="2x"/>
+              </a>
+              <a href="tel:2533011107" target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon icon={faPhone} size="2x"/>
               </a>
             </div>
 
