@@ -3,8 +3,8 @@ import RBLogo from "./RBLogo";
 
 export default function Header() {
   return (
-    <Navbar className="bg-black opacity-80 text-3xl ml-1 mr-1" style={{ fontFamily: 'TrueLies, sans-serif' }}>
-      <NavbarBrand className="items-center">
+    <Navbar className="bg-black opacity-80 text-3xl" style={{ fontFamily: 'TrueLies, sans-serif' }}>
+      <NavbarBrand className="items-center ml-1 mr-1">
         <Link className="pl-2 font-bold text-inherit" href="/">
           <RBLogo />
           Rare Breed Ink

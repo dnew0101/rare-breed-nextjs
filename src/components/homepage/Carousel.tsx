@@ -34,7 +34,7 @@ const Carousel: React.FC<CarouselProps> = ({ items, reverse = false }) => {
   }, [items, reverse]);
 
   return (
-    <div className="overflow-hidden h-[100%] relative" style={{ whiteSpace: 'nowrap' }}>
+    <div className="relative h-full m-0" style={{ whiteSpace: 'nowrap' }}>
       <div
         ref={carouselRef}
         className={`flex h-full ${reverse ? 'reverse-scroll' : 'normal-scroll'}`}

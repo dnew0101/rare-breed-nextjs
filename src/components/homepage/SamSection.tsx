@@ -34,12 +34,12 @@ const ArtistSection = () => {
   if (error) return <div>Error fetching Artist Section...</div>;
 
   return (
-    <section className="artist-section relative w-full h-[95vh] m-0 p-0 overflow-hidden">
+    <section className="artist-section relative w-full h-[95vh] overflow-hidden">
       {/* Carousel Background */}
       {artistData && <Carousel items={artistData.photosCollection.items} reverse={false} />}
 
       {/* Slanted Section */}
-      <div className="slanted-section flex flex-row-reverse absolute top-0 m-0 h-[101%] w-full bg-black opacity-90 text-white z-10">
+      <div className="slanted-section flex flex-row-reverse absolute top-0 h-[100%] w-full bg-black opacity-90 text-white z-10">
         <div className="divide-container flex flex-col mb-6 h-[70%] w-[38%] justify-center self-center">
 
           <div className='content-container flex flex-col mr-6 mt-2 h-auto w-[90%] items-center text-center'>

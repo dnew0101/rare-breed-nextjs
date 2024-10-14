@@ -35,16 +35,15 @@ const HeroSection = () => {
 
   return (
     <section className="hero-section relative w-full h-screen overflow-hidden">
-      <div className="absolute inset-0">
         <Image
           src={heroData.heroImage.url}
           alt={heroData.heroImage.description}
-          layout="fill"
+          width={1920}
+          height={1400}
           objectFit="cover"
-          quality={70}
+          quality={50}
           priority
         />
-      </div>
 
 
       <div className="absolute inset-0 bg-black bg-opacity-75 backdrop-blur-sm"></div>
