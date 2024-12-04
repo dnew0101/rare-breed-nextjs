@@ -1,6 +1,14 @@
 "use client"
 import React, { useEffect, useState } from 'react';
 import fetchTestimonials from '../../backend/api/fetchTestimonials';
+import Testimonial from './subcomponents/Testimonial';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/effect-fade';
+import { EffectCoverflow, Navigation } from 'swiper/modules';
+
 
 const TestimonialSection = () => {
   const [testimonials, setTestimonials] = useState<{ clientName: string; testimonial: string }[]>([]);
@@ -20,35 +28,55 @@ const TestimonialSection = () => {
     getTestimonials();
   }, []);
 
-  useEffect(() => {
-    if (testimonials.length === 0) return;
-
-    const interval = setInterval(() => {
-      setVisible(false);
-      setTimeout(() => {
-        setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
-        setVisible(true);
-      }, 1000); // Hide for 1 second
-    }, 8000); // Show for 7 seconds + 1 second hide
-
-    return () => clearInterval(interval);
-  }, [testimonials]);
-
   if (testimonials.length === 0) {
     return <div>Loading testimonials...</div>;
   }
 
   return (
-    <section className="testimonial-section bg-neutral-900 flex flex-col items-center p-8">
-        <h1 className="text-6xl sm:text-7xl font-bold text-neutral-100 drop-shadow-lg mt-16 mb-14">Testimonials</h1>
-      <div
-        className={`testimonial-card bg-neutral-100 justify-center mb-4 w-[70vw] md:max-w-[50%] p-8 rounded-lg shadow-lg transition-opacity duration-1000 ${
-          visible ? 'opacity-100' : 'opacity-0'
-        }`}
+    <section className="testimonial-section bg-neutral-950 flex flex-col items-center p-8 h-[80vh]">
+      <h1 className="text-6xl sm:text-7xl font-bold text-neutral-100 drop-shadow-lg mt-16 mb-14">Testimonials</h1>
+      <Swiper
+        effect= { 'coverflow' }
+        grabCursor= { true }
+        centeredSlides= { true }
+        loop= { true }
+        coverflowEffect= { 
+          { 
+            rotate: 0, 
+            stretch: 0, 
+            depth: 100, 
+            modifier: 4,
+            slideShadows: false,
+          } 
+        }
+        navigation={true}
+        modules={[EffectCoverflow, Navigation]}
+        className="swiper-slide-container"
+        breakpoints={{
+          0: {
+            slidesPerView: 1,
+            spaceBetween: 0,
+          },
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 10,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 0,
+          },
+        }}
       >
-        <p className="text-lg text-center text-neutral-900 italic">&quot;{testimonials[currentTestimonial].testimonial}&quot;</p>
-        <p className="text-sm text-center mt-4 text-neutral-800">- {testimonials[currentTestimonial].clientName}</p>
-      </div>
+        {testimonials.map((testimonial, index) => (
+          <SwiperSlide key={index} style={{ display: 'flex', justifyContent: 'center' }}>
+            <Testimonial
+              testimonial={testimonial.testimonial}
+              clientName={testimonial.clientName}
+              visible={true}
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </section>
   );
 };
