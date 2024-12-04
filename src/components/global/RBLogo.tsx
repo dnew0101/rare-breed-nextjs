@@ -5,8 +5,8 @@ const RBLogo = () => (
     <Image 
       src="/images/Rare_Breed_Logo.png" 
       alt="Rare Breed Logo"
-      width={36}
-      height={36} 
+      width={50}
+      height={50} 
     />
   </div>
 );

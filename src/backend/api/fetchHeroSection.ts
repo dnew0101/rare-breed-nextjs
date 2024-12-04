@@ -24,6 +24,10 @@ const query = gql`
                 url
                 title
             }
+            heroImageMobile {
+                url
+                title
+            }
             heroTitle
             subtitle
         }

@@ -28,7 +28,8 @@ const AvailableDesigns: React.FC = () => {
 
 return (
   <div className="relative p-4 min-h-screen justify-center">
-    <h1 className=" relative z-10 flex text-8xl font-bold mt-10 mb-16 text-center self-center justify-center" style={{fontFamily: 'Odachi, san-serif'}}>Available Designs</h1>
+    <h1 className=" relative z-10 flex text-7xl font-light mt-10 mb-16 text-center self-center justify-center" 
+    style={{fontFamily: 'Inter, san-serif'}}>Available Designs</h1>
     
     {designs.length > 0 ? (
         <div className="relative z-10 flex flex-wrap justify-around">

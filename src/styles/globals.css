@@ -42,11 +42,21 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Inter';
+  src: url('https://fonts.gstatic.com/s/inter/v3/UcCO3Fwr0p9g3k3PpQ.woff2') format('woff2'),
+       url('https://fonts.gstatic.com/s/inter/v3/UcCO3Fwr0p9g3k3PpQ.woff') format('woff');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap');
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #ededed;
+  --foreground: #0a0a0a;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -56,18 +66,23 @@
   }
 }
 
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: var(--font-montserrat);
+  font-family: var(--font-inter);
 }
 
 h1 {
-  font-family: 'TrueLies';
-}
-
-.custom-background {
-  background-color: (0,0,0,0.92);
+  font-family: 'Inter';
+  font-weight: 100;
 }
 
 @layer utilities {

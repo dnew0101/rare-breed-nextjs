@@ -42,11 +42,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en m-0 p-0">
       <Meta />
       <body className={`${montserrat.variable} antialiased bg-black`}>
         <NextUIProvider>
-          <main className="dark text-foreground bg-background">
+          <main className="dark text-foreground bg-background m-0 p-0">
             <Header />
             {children}
             <Footer />

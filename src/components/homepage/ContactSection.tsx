@@ -45,11 +45,14 @@ const ContactSection = () => {
         <p>Appointment Only!</p>
       </div>
 
-      <div 
-        className="flex map-container mt-4 rounded-lg justify-self-center mb-4"
-        style={{ overflow: 'hidden', width: '100%', maxWidth: '800px', height: '500px' }}
-        dangerouslySetInnerHTML={{ __html: contactSectionData?.mapEmbedCode || '' }}
-      />
+
+      <div className='w-[70vw] map'>
+        <div 
+          className="flex map-container mt-4 rounded-lg justify-self-center mb-4"
+          style={{ overflow: 'hidden', width: '100%', maxWidth: '800px', height: '500px' }}
+          dangerouslySetInnerHTML={{ __html: contactSectionData?.mapEmbedCode || '' }}
+        />
+      </div>
     </section>
   );
 };
