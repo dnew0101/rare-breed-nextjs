@@ -1,10 +1,12 @@
+import dynamic from 'next/dynamic';
+import { Divider } from "@nextui-org/react";
+
 import HeroSection from "@/components/homepage/HeroSection";
 import LosSection from "@/components/homepage/LosSection";
 import SamSection from "@/components/homepage/SamSection";
 import RayeSection from "@/components/homepage/RayeSection";
 import TestimonialSection from "@/components/homepage/TestimonialSection";
 import FaqSection from "@/components/homepage/FaqSection";
-import { Divider } from "@nextui-org/react";
 import LocationSection from "@/components/homepage/LocationSection";
 
 export default async function Home() {

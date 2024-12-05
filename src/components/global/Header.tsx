@@ -1,13 +1,25 @@
 "use client";
 
-import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, NavbarMenu, NavbarMenuItem, NavbarMenuToggle, Divider } from "@nextui-org/react";
+import {
+  Navbar, 
+  NavbarBrand, 
+  NavbarContent, 
+  NavbarItem, 
+  Link, 
+  NavbarMenu, 
+  NavbarMenuItem, 
+  NavbarMenuToggle, 
+  Divider 
+} from "@nextui-org/react";
 import RBLogo from "./RBLogo";
 import React from "react";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   return (
-    <Navbar isBordered className="bg-black opacity-80 text-3xl" style={{ fontFamily: 'TrueLies, sans-serif' }}>
+    <Navbar isBordered 
+    className={`text-3xl ${isMenuOpen ? "flex items-center bg-black bg-opacity-80" : "bg-black opacity-80"}`} 
+    style={{ fontFamily: 'TrueLies, sans-serif' }}>
       <NavbarBrand className="items-center mr-1">
         <Link className="font-bold text-inherit" href="/">
           <RBLogo />

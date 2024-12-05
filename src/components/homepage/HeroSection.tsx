@@ -4,33 +4,41 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { fetchHeroSection } from '../../backend/api/fetchHeroSection';
 import { Button, Skeleton } from '@nextui-org/react';
-import Rare_Breed_Logo from '../../../public/images/Rare_Breed_Logo.png';
+import Rare_Breed_Logo from '../../../public/images/Rare_Breed_Logo.webp';
+import LosGrabbingInkBottle4k from '../../../public/images/Hero-Photos-webp/LosGrabbingInkBottle4k.webp';
+import Desktop_Hero from '../../../public/images/Hero-Photos-webp/Desktop_Hero.webp';
 
 const HeroSection = () => {
   
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [heroData, setHeroData] = useState<any>(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [error, setError] = useState<any>(null);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const fetchHeroData = async () => {
-      try {
+
+
+    //--In favor of making hero photos local--
+    //Keeping code block around for reference
+
+    // const fetchHeroData = async () => {
+    //   try {
         
-        const heroContent = await fetchHeroSection(`${process.env.NEXT_PUBLIC_CONTENTFUL_HERO_ID}`);
-        setHeroData(heroContent);
+    //     const heroContent = await fetchHeroSection(`${process.env.NEXT_PUBLIC_CONTENTFUL_HERO_ID}`);
+    //     setHeroData(heroContent);
 
-        setLoading(false);
-      } catch (error) {
-        setError(error);
-        setLoading(false);
-      }
-    };
+    //     setLoading(false);
+    //   } catch (error) {
+    //     setError(error);
+    //     setLoading(false);
+    //   }
+    // };
 
-    fetchHeroData();
+    // fetchHeroData();
+
 
     //check initial screen width for mobile/desktop image rendering
     setIsMobile(window.innerWidth <= 768);
@@ -57,8 +65,9 @@ const HeroSection = () => {
   }
 
   // Set image URL and description based on screen size
-  const heroImageUrl = isMobile ? heroData?.heroImageMobile?.url : heroData?.heroImage?.url;
-  const heroImageDescription = isMobile ? heroData?.heroImageMobile?.description : heroData?.heroImage?.description;
+  const heroImageUrl = isMobile ? LosGrabbingInkBottle4k : Desktop_Hero;
+  //alt description for hero image
+  // const heroImageDescription = isMobile ? heroData?.heroImageMobile?.description : heroData?.heroImage?.description;
 
 
   return (
@@ -68,7 +77,7 @@ const HeroSection = () => {
         md:absolute md:h-full md:rounded-none'>
             <Image
               src={heroImageUrl}
-              alt={heroImageDescription || 'Hero Image'}
+              alt={'Hero Image'}
               quality={50}
               className='object-cover object-center'
               fill
