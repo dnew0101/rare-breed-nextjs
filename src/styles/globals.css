@@ -119,11 +119,6 @@ h1 {
   opacity: 1;
 }
 
-.swiper-pagination {
-  bottom: 10px;
-  margin-top: 10px;
-}
-
 @media (max-width: 640px) {
   .swiper-button-next,
   .swiper-button-prev {

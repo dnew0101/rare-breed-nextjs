@@ -50,32 +50,28 @@ const FaqSection: React.FC = () => {
     getFaqs();
   }, []);
 
-  
-
-  if (loading) return <div>Loading FAQs...</div>;
   if (error) return <div>{error}</div>;
 
-  //constructs array and sorts tags alphabetically; excludes "general" to keep it first
+  //constructs array and sorts tags by edit relevance; excludes "general" to keep it first
 // tags are provided from Contentful; each tag corresponds to a group of FAQs
   let tags = Array.from(new Set(faqs.map(faq => faq.tag)));
   tags = tags.sort((a, b) => (a === 'General' ? -1 : b === 'General' ? 1 : 0));
 
   return (
-    <section className="flex flex-col text-center items-center faq-section bg-neutral-950 text-neutral-100 p-8 mb-10">
-      <h1 className="text-7xl font-bold mt-12 mb-16">
+    <section className="flex flex-col text-center items-center faq-section bg-neutral-950 text-neutral-100 p-8 mt-6 mb-10">
+      <h1 className="text-6xl sm:text-7xl font-bold mb-16">
         <span className="block sm:hidden">FAQs</span>
         <span className="hidden sm:block">Frequently Asked Questions</span>
       </h1>
     <div className='content-container flex flex-col flex-start items-center w-full'>
       <Tabs
-        size='md'
-        className='w-full'
+        size='sm'
+        className='max-w-90%'
         aria-label='FAQ Tabs'
         selectedKey={activeTab}
         onSelectionChange={(key) => setActiveTab(key as string)}
-        isVertical={isVertical}
+        isVertical={false}
         placement='top'
-        style={{ height: '200px' }}
       >
         {/*
         Sources:

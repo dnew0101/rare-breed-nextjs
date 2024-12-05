@@ -33,8 +33,8 @@ const TestimonialSection = () => {
   }
 
   return (
-    <section className="testimonial-section bg-neutral-950 flex flex-col items-center p-8 h-[80vh]">
-      <h1 className="text-6xl sm:text-7xl font-bold text-neutral-100 drop-shadow-lg mt-16 mb-14">Testimonials</h1>
+    <section className="testimonial-section bg-neutral-950 flex flex-col items-center p-8 h-[80vh] mt-6">
+      <h1 className="text-6xl sm:text-7xl font-bold text-neutral-100 drop-shadow-lg mb-14">Reviews</h1>
       <Swiper
         effect= { 'coverflow' }
         grabCursor= { true }

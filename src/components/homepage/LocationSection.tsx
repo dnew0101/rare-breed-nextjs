@@ -10,7 +10,7 @@ interface ContactSectionData {
   mapEmbedCode: string;
 }
 
-const ContactSection = () => {
+const LocationSection = () => {
   const [contactSectionData, setContactSectionData] = useState<ContactSectionData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -34,8 +34,8 @@ const ContactSection = () => {
   if (error) return <div>{error}</div>;
 
   return (
-    <section className="location-section bg-neutral-950 text-neutral-100 p-8 flex flex-col items-center">
-      <h1 className="text-7xl font-bold mt-12 mb-10">{contactSectionData?.sectionTitle}</h1>
+    <section className="location-section bg-neutral-950 text-neutral-100 p-8 flex flex-col items-center mt-6 mb-10">
+      <h1 className="text-6xl sm:text-7xl font-bold mb-10">{contactSectionData?.sectionTitle}</h1>
 
       <div className='justify-center text-center'>
         <p className="mb-2">
@@ -57,4 +57,4 @@ const ContactSection = () => {
   );
 };
 
-export default ContactSection;
+export default LocationSection;
