@@ -8,28 +8,34 @@ import 'swiper/css/navigation';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/effect-fade';
 import { EffectCoverflow, Navigation } from 'swiper/modules';
+import { Skeleton } from '@nextui-org/react';
 
 
 const TestimonialSection = () => {
   const [testimonials, setTestimonials] = useState<{ clientName: string; testimonial: string }[]>([]);
-  const [currentTestimonial, setCurrentTestimonial] = useState(0);
-  const [visible, setVisible] = useState(true);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const getTestimonials = async () => {
       try {
         const data = await fetchTestimonials();
         setTestimonials(data);
+        setLoading(false);
       } catch (error) {
         console.error('Error fetching testimonials:', error);
+        setLoading(false);
       }
     };
 
     getTestimonials();
   }, []);
 
-  if (testimonials.length === 0) {
-    return <div>Loading testimonials...</div>;
+  if (loading) {
+    return (
+      <section className="testimonial-section bg-neutral-950 flex flex-col items-center">
+        <Skeleton className='h-[100vh] w-[100vw]' />
+      </section>
+    );
   }
 
   return (

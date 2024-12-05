@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { fetchContactSection } from '../../backend/api/fetchContact';
+import { Skeleton } from '@nextui-org/react';
 
 interface ContactSectionData {
   sectionTitle: string;
@@ -30,7 +31,13 @@ const LocationSection = () => {
     getContactSectionData();
   }, []);
 
-  if (loading) return <div>Loading location data...</div>;
+  if (loading) {
+    return (
+      <section className="location-section bg-neutral-950 flex flex-col items-center">
+        <Skeleton className='h-[100vh] w-[100vw]' />
+      </section>
+    );
+  }
   if (error) return <div>{error}</div>;
 
   return (

@@ -43,14 +43,13 @@ const CardCarousel: React.FC<CarouselProps> = ({ items }) => {
       >
         {items.map((photo) => (
           <SwiperSlide key={photo.sys.id}>
-            <div className="carousel-item relative w-full h-[500px]">
+            <div className="carousel-item relative w-auto h-[500px]">
               <Image
                 src={photo.url}
                 alt={`Photo ${photo.sys.id}`}
-                layout="responsive"
                 width={500}
                 height={500}
-                objectFit="cover"
+                className='object-cover'
               />
             </div>
           </SwiperSlide>

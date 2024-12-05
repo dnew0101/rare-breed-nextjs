@@ -7,7 +7,7 @@ const Footer = () => {
       <footer>
         <div className="content-container flex flex-col text-center justify-center items-center">
           <p>Photography by <a className="underline" href="https://www.instagram.com/chelsea_tornga_photography/">@chelsea_tornga_photography</a></p>
-          <p className="mt-2">👇🏽 Follow us down below 👇🏽</p>
+          <p className="mt-2">👇🏽 Talk with us today! 👇🏽</p>
 
           <div className="links-container flex flex-row justify-between sm:justify-around w-[50%] m-4">
           <a

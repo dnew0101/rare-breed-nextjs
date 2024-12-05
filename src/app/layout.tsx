@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
 import "../styles/globals.css";
 import Meta from "@/components/global/Meta";
-import * as React from "react";
-import { NextUIProvider } from "@nextui-org/react";
-import Header from "@/components/global/Header";
-import Footer from "@/components/global/Footer";
+import React, { Suspense, lazy } from "react";
+import { NextUIProvider, Spinner } from "@nextui-org/react";
 import { Montserrat } from "next/font/google";
+import dynamic from 'next/dynamic';
 
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { config } from '@fortawesome/fontawesome-svg-core';
 config.autoAddCss = false; // Prevent FontAwesome from adding its CSS automatically
 
-
+const Header = dynamic(() => import('@/components/global/Header'));
+const Footer = dynamic(() => import('@/components/global/Footer'));
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -44,7 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en m-0 p-0">
       <Meta />
-      <body className={`${montserrat.variable} antialiased bg-black`}>
+      <body className="antialiased bg-black">
         <NextUIProvider>
           <main className="dark text-foreground bg-background m-0 p-0">
             <Header />

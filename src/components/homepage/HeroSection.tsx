@@ -3,8 +3,7 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { fetchHeroSection } from '../../backend/api/fetchHeroSection';
-import { Button } from '@nextui-org/react';
-import { b } from 'framer-motion/client';
+import { Button, Skeleton } from '@nextui-org/react';
 import Rare_Breed_Logo from '../../../public/images/Rare_Breed_Logo.png';
 
 const HeroSection = () => {
@@ -21,9 +20,9 @@ const HeroSection = () => {
     const fetchHeroData = async () => {
       try {
         
-        // Fetch the Hero Section data using the fetchHeroSection function
         const heroContent = await fetchHeroSection(`${process.env.NEXT_PUBLIC_CONTENTFUL_HERO_ID}`);
         setHeroData(heroContent);
+
         setLoading(false);
       } catch (error) {
         setError(error);
@@ -49,13 +48,17 @@ const HeroSection = () => {
     };
   }, []);
 
-  //prelim error handling
-  if (loading) return <div>Loading Hero Section...</div>;
-  if (error) return <div>Error fetching Hero Section...</div>;
+  if (loading) {
+    return (
+      <section className="hero-section bg-neutral-950 flex flex-col items-center">
+        <Skeleton className='h-[100vh] w-[100vw]' />
+      </section>
+    );
+  }
 
   // Set image URL and description based on screen size
-  const heroImageUrl = isMobile ? heroData.heroImageMobile.url : heroData.heroImage.url;
-  const heroImageDescription = isMobile ? heroData.heroImageMobile.description : heroData.heroImage.description;
+  const heroImageUrl = isMobile ? heroData?.heroImageMobile?.url : heroData?.heroImage?.url;
+  const heroImageDescription = isMobile ? heroData?.heroImageMobile?.description : heroData?.heroImage?.description;
 
 
   return (
@@ -65,10 +68,10 @@ const HeroSection = () => {
         md:absolute md:h-full md:rounded-none'>
             <Image
               src={heroImageUrl}
-              alt={heroImageDescription}
-              layout='fill'
-              objectFit='cover'
+              alt={heroImageDescription || 'Hero Image'}
               quality={50}
+              className='object-cover object-center'
+              fill
               priority
             />
             <div className="absolute inset-0 bg-black bg-opacity-60"></div>
@@ -81,13 +84,14 @@ const HeroSection = () => {
                   alt="Rare Breed Logo"
                   width={300}
                   height={300}
-                  priority
                 />
+
                 {/* <h1 className="text-6xl text-neutral-100 drop-shadow-lg
                 md:text-9xl">
                   {heroData.heroTitle}
                 </h1>
                 <p className="text-white text-xs mt-8">{heroData.subtitle}</p> */}
+                
                 </div>
 
               <div className='button-container flex justify-evenly items-center w-full mt-auto mb-28 pl-4 pr-4'>

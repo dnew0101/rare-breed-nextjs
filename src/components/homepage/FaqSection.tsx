@@ -2,10 +2,11 @@
 
 import { useEffect, useState } from 'react';
 import fetchFaqs from '../../backend/api/fetchFaqs';
-import { Accordion, AccordionItem, Tabs, Tab } from '@nextui-org/react';
+import { Accordion, AccordionItem, Tabs, Tab, Skeleton } from '@nextui-org/react';
 
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { Document } from '@contentful/rich-text-types';
+import { height } from '@fortawesome/free-brands-svg-icons/fa42Group';
 
 interface Faq {
   questionTitle: string;
@@ -50,6 +51,13 @@ const FaqSection: React.FC = () => {
     getFaqs();
   }, []);
 
+  if (loading) {
+    return (
+      <section className="faq-section flex flex-col text-center items-center bg-neutral-950 text-neutral-100 p-8 mt-6 mb-10">
+        <Skeleton className='h-full w-full' />
+      </section>
+    );
+  }
   if (error) return <div>{error}</div>;
 
   //constructs array and sorts tags by edit relevance; excludes "general" to keep it first
@@ -58,7 +66,7 @@ const FaqSection: React.FC = () => {
   tags = tags.sort((a, b) => (a === 'General' ? -1 : b === 'General' ? 1 : 0));
 
   return (
-    <section className="flex flex-col text-center items-center faq-section bg-neutral-950 text-neutral-100 p-8 mt-6 mb-10">
+    <section className="faq-section flex flex-col text-center items-center bg-neutral-950 text-neutral-100 p-8 mt-6 mb-10">
       <h1 className="text-6xl sm:text-7xl font-bold mb-16">
         <span className="block sm:hidden">FAQs</span>
         <span className="hidden sm:block">Frequently Asked Questions</span>
@@ -66,7 +74,7 @@ const FaqSection: React.FC = () => {
     <div className='content-container flex flex-col flex-start items-center w-full'>
       <Tabs
         size='sm'
-        className='max-w-90%'
+        className='max-w-90% w-auto h-auto'
         aria-label='FAQ Tabs'
         selectedKey={activeTab}
         onSelectionChange={(key) => setActiveTab(key as string)}
@@ -85,8 +93,9 @@ const FaqSection: React.FC = () => {
               key={index} 
               title={tag}
               className={activeTab === tag ? 'active-tab-class' : ''}
+              style={{ height: 'auto', width: 'auto' }}
             >
-              <Accordion variant='bordered' className='w-[100%] sm:w-[70vw] mt-8 mb-8 self-center justify-self-center'
+              <Accordion variant='bordered' className='w-[100%] sm:w-[70vw] h-auto mt-8 mb-8 self-center justify-self-center'
                   motionProps={{
                       variants: {
                       enter: {
@@ -129,9 +138,9 @@ const FaqSection: React.FC = () => {
                 {faqs
                   .filter(faq => faq.tag === tag)
                   .map((faq, index) => (
-                    <AccordionItem key={index} title={faq.questionTitle} className='font-montserrat'>
+                    <AccordionItem key={index} title={faq.questionTitle} className='font-montserrat h-auto w-auto'>
                       {faq.answer ? (
-                        <p>{documentToReactComponents(faq.answer.json)}</p>
+                        <div>{documentToReactComponents(faq.answer.json)}</div>
                       ) : (
                         <p>No answer available at this time.</p>
                       )}

@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { fetchArtist } from '../../backend/api/fetchArtist';
 import Carousel from './Carousel';
-import { Divider } from '@nextui-org/react';
+import { Divider, Skeleton } from '@nextui-org/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 
@@ -30,7 +30,14 @@ const ArtistSection = () => {
     fetchArtistData();
   }, []);
 
-  if (loading) return <div>Loading Artist Section...</div>;
+  if (loading) {
+    return (
+      <section className="artist-section bg-neutral-950 flex flex-col items-center">
+        <Skeleton className='h-[100vh] w-[100vw]' />
+      </section>
+    );
+  }
+  
   if (error) return <div>Error fetching Artist Section...</div>;
 
   return (

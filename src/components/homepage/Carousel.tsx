@@ -38,19 +38,19 @@ const Carousel: React.FC<CarouselProps> = ({ items, reverse = false }) => {
       <div
         ref={carouselRef}
         className={`flex h-full ${reverse ? 'reverse-scroll' : 'normal-scroll'}`}
-        style={{ width: `${items.length * 1000}px` }}
+        style={{ width: `${items.length * 1000}px`, height: 'auto'}}
       >
         {items.concat(items).map((photo, index) => (
           <Image
             as={NextImage}
             key={`${photo.sys.id}-${index}`}
             src={photo.url}
-            alt={`Photo ${index + 1}`}
-            height={900}
-            width={items.length * 1000}
-            className="object-cover h-full"
-            style={{ flex: '0 0 auto', borderRadius: '0' }}
-          />
+            alt={photo.description || photo.title || `Photo ${photo.sys.id}` || ''}
+            width={0}
+            height={0}
+            className="object-cover"
+            style={{ flex: '0 0 auto', borderRadius: '0', width: 'auto', height: '900px' }}
+            />
         ))}
       </div>
       <style jsx>{`
