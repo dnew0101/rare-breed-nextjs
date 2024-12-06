@@ -44,15 +44,12 @@
 
 @font-face {
   font-family: 'Inter';
-  src: url('https://fonts.gstatic.com/s/inter/v3/UcCO3Fwr0p9g3k3PpQ.woff2') format('woff2'),
-       url('https://fonts.gstatic.com/s/inter/v3/UcCO3Fwr0p9g3k3PpQ.woff') format('woff');
+  src: url('https://fonts.gstatic.com/s/inter/v12/UcCO3Fwr0p9g3k3PpQ.woff2') format('woff2'),
+       url('https://fonts.gstatic.com/s/inter/v12/UcCO3Fwr0p9g3k3PpQ.woff') format('woff');
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap');
 
 :root {
   --background: #ededed;

@@ -6,7 +6,6 @@ import { Accordion, AccordionItem, Tabs, Tab, Skeleton } from '@nextui-org/react
 
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { Document } from '@contentful/rich-text-types';
-import { height } from '@fortawesome/free-brands-svg-icons/fa42Group';
 
 interface Faq {
   questionTitle: string;
@@ -19,21 +18,6 @@ const FaqSection: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState<string | null>(null);
-  const [isVertical, setIsVertical] = useState<boolean>(false);
-
-  //resize event listener; when on a "sm" device, isVertical is set to true
-  //used to set Tabs to the vertical state; https://nextui.org/docs/components/tabs
-  useEffect(() => {
-    const handleResize = () => {
-      setIsVertical(window.innerWidth < 640);
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
 
   //async function to fetch FAQs data from Contentful
   useEffect(() => {

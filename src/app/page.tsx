@@ -1,6 +1,4 @@
-import dynamic from 'next/dynamic';
 import { Divider } from "@nextui-org/react";
-
 import HeroSection from "@/components/homepage/HeroSection";
 import LosSection from "@/components/homepage/LosSection";
 import SamSection from "@/components/homepage/SamSection";

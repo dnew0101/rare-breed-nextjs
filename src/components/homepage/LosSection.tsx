@@ -56,8 +56,9 @@ const ArtistSection = () => {
                   <p>{artistData.bio}</p>   
               <Divider className="mt-6 max-w-[85%]" /> 
 
-              <div className='contact-grouping flex flex-row w-[100%] lg:w-[50%] justify-around items-center mt-10'>
-                <a href="http://www.instagram.com/rarebreedinkstudio" target="_blank" rel="noopener noreferrer">
+              <div 
+              className='contact-grouping flex flex-row w-[100%] lg:w-[50%] justify-around items-center mt-10'>
+                <a aria-label={`${artistData.name}'s Instagram link.`} href="http://www.instagram.com/rarebreedinkstudio" target="_blank" rel="noopener noreferrer">
                   <FontAwesomeIcon icon={faInstagram} size="2x"/>
                 </a>
               </div>  

@@ -14,12 +14,12 @@ const Testimonial: React.FC<TestimonialProps> = ({ testimonial, clientName }) =>
         <div className="flex gap-5">
           <Avatar isBordered radius="full" size="md" src="" />
           <div className="flex flex-col gap-1 items-start justify-center">
-            <h4 className="text-small font-semibold leading-none text-default-600">{clientName}</h4>
+            <p className="text-small font-semibold leading-none text-default-600">{clientName}</p>
           </div>
         </div>
       </CardHeader>
       <CardBody className="px-3 py-0 pb-4 text-small text-default-400">
-        <p className='font-extralight'>"{testimonial}"</p>
+        <p className="font-extralight text-default-600">&quot;{testimonial}&quot;</p>
       </CardBody>
     </Card>
     );

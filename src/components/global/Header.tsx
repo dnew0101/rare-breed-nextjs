@@ -23,22 +23,22 @@ export default function Header() {
       <NavbarBrand className="items-center mr-1">
         <Link className="font-bold text-inherit" href="/">
           <RBLogo />
-          <p className="invisible md:visible mt-1 ml-2">Rare Breed Ink</p>
+          <p className="opacity-0 md:opacity-100 mt-1 ml-2">Rare Breed Ink</p>
         </Link>
       </NavbarBrand>
       <NavbarContent className="hidden sm:flex justify-items-end gap-4" justify="center">
         <NavbarItem>
-          <Link color="foreground" href="/artist/los/page.tsx" aria-current="page">
+          <Link color="foreground" href="/artist/los/page.tsx" aria-label="Los page">
             Los
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="/artist/sam/page.tsx" aria-current="page">
+          <Link color="foreground" href="/artist/sam/page.tsx" aria-label="Sam page">
             Sam
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="/artist/raye/page.tsx" aria-current="page">
+          <Link color="foreground" href="/artist/raye/page.tsx" aria-label="Raye page">
             Raye
           </Link>
         </NavbarItem>

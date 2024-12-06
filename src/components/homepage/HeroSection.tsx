@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { fetchHeroSection } from '../../backend/api/fetchHeroSection';
-import { Button, Skeleton } from '@nextui-org/react';
+// import { fetchHeroSection } from '../../backend/api/fetchHeroSection';
+import { Button } from '@nextui-org/react';
 import Rare_Breed_Logo from '../../../public/images/Rare_Breed_Logo.webp';
 import LosGrabbingInkBottle4k from '../../../public/images/Hero-Photos-webp/LosGrabbingInkBottle4k.webp';
 import Desktop_Hero from '../../../public/images/Hero-Photos-webp/Desktop_Hero.webp';
@@ -11,11 +11,11 @@ import Desktop_Hero from '../../../public/images/Hero-Photos-webp/Desktop_Hero.w
 const HeroSection = () => {
   
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const [heroData, setHeroData] = useState<any>(null);
-  const [loading, setLoading] = useState(false);
+  // const [heroData, setHeroData] = useState<any>(null);
+  // const [loading, setLoading] = useState(false);
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const [error, setError] = useState<any>(null);
+  // const [error, setError] = useState<any>(null);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -56,13 +56,13 @@ const HeroSection = () => {
     };
   }, []);
 
-  if (loading) {
-    return (
-      <section className="hero-section bg-neutral-950 flex flex-col items-center">
-        <Skeleton className='h-[100vh] w-[100vw]' />
-      </section>
-    );
-  }
+  // if (loading) {
+  //   return (
+  //     <section className="hero-section bg-neutral-950 flex flex-col items-center">
+  //       <Skeleton className='h-[100vh] w-[100vw]' />
+  //     </section>
+  //   );
+  // }
 
   // Set image URL and description based on screen size
   const heroImageUrl = isMobile ? LosGrabbingInkBottle4k : Desktop_Hero;
@@ -71,28 +71,31 @@ const HeroSection = () => {
 
 
   return (
-    <section className="hero-section relative flex h-[90vh] ml-6 mr-6 pl-4 pr-4 justify-center items-center
+    <section className="hero-section relative flex h-[80vh] ml-6 mr-6 pl-4 pr-4 justify-center items-center
+    sm:h-[85vh]
     md:m-0 md:h-[95vh]">
+
         <div className='mobile-container absolute flex flex-col w-full h-[90%] rounded-3xl overflow-hidden
         md:absolute md:h-full md:rounded-none'>
             <Image
               src={heroImageUrl}
               alt={'Hero Image'}
-              quality={50}
-              className='object-cover object-center'
+              quality={40}
+              className='h-auto w-auto'
               fill
               priority
             />
             <div className="absolute inset-0 bg-black bg-opacity-60"></div>
             <div className='content-container absolute flex flex-col h-full w-full'>
-              <div className="text-container flex flex-col items-center justify-center text-center mt-24 p-4
-              sm:mt-28
+              <div className="text-container flex flex-col items-center justify-center text-center mt-10 p-4
+              sm:mt-14
               md:top-24 md:text-center md:items-center">
                 <Image
                   src={Rare_Breed_Logo}
                   alt="Rare Breed Logo"
-                  width={300}
-                  height={300}
+                  width={0}
+                  height={0}
+                  className='h-[220px] w-[220px] md:h-[300px] md:w-[300px]'
                 />
 
                 {/* <h1 className="text-6xl text-neutral-100 drop-shadow-lg
@@ -107,12 +110,10 @@ const HeroSection = () => {
 
                   {/*Sends user to the contact page */}
                   <Button
-                    className="bg-neutral-900"
-                    size="md"
+                    className="bg-neutral-900 size"
                     radius='full'
                     variant='faded'
-                    onClick={() => window.open(heroData.buttonLink, '_blank')}>Book now
-                  </Button>
+                  >Book now </Button>
 
                   {/*Sends user to the available designs page */}
                   <Button
@@ -120,8 +121,8 @@ const HeroSection = () => {
                     size="md"
                     radius='full'
                     variant='faded'
-                    >
-                      <a href='/available-designs'>See designs</a>
+                  >
+                    <a href='/available-designs'>See designs</a>
                   </Button>
 
               </div>

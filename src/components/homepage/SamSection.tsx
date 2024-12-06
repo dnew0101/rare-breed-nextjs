@@ -58,7 +58,7 @@ const ArtistSection = () => {
             <Divider className="mt-6 max-w-[85%]" /> 
 
             <div className='contact-grouping flex flex-row w-[100%] lg:w-[50%] justify-around items-center mt-10'>
-                <a href="https://www.instagram.com/lovelyinink_" target="_blank" rel="noopener noreferrer">
+                <a aria-label={`${artistData.name}'s Instagram link.`} href="https://www.instagram.com/lovelyinink_" target="_blank" rel="noopener noreferrer">
                   <FontAwesomeIcon icon={faInstagram} size="2x"/>
                 </a>
             </div> 
