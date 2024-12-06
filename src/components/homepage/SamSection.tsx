@@ -41,7 +41,8 @@ const ArtistSection = () => {
   if (error) return <div>Error fetching Artist Section...</div>;
 
   return (
-    <section className="artist-section relative w-full h-[90vh] overflow-hidden">
+    <section 
+    className="artist-section relative w-full h-[90vh] overflow-hidden bg-background">
       {/* Carousel Background */}
       {artistData && <Carousel items={artistData.photosCollection.items} reverse={false} />}
 

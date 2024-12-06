@@ -71,11 +71,11 @@ const HeroSection = () => {
 
 
   return (
-    <section className="hero-section relative flex h-[80vh] ml-6 mr-6 pl-4 pr-4 justify-center items-center
+    <section className="hero-section relative flex h-[80vh] pl-4 pr-4 justify-center items-center
     sm:h-[85vh]
     md:m-0 md:h-[95vh]">
 
-        <div className='mobile-container absolute flex flex-col w-full h-[90%] rounded-3xl overflow-hidden
+        <div className='mobile-container absolute flex flex-col w-full h-[100%] overflow-hidden
         md:absolute md:h-full md:rounded-none'>
             <Image
               src={heroImageUrl}
@@ -87,9 +87,10 @@ const HeroSection = () => {
             />
             <div className="absolute inset-0 bg-black bg-opacity-60"></div>
             <div className='content-container absolute flex flex-col h-full w-full'>
-              <div className="text-container flex flex-col items-center justify-center text-center mt-10 p-4
+              <div className="text-container flex flex-col items-center justify-center text-center 
+              mt-10 p-4
               sm:mt-14
-              md:top-24 md:text-center md:items-center">
+              md:mt-24">
                 <Image
                   src={Rare_Breed_Logo}
                   alt="Rare Breed Logo"
@@ -106,21 +107,26 @@ const HeroSection = () => {
                 
                 </div>
 
-              <div className='button-container flex justify-evenly items-center w-full mt-auto mb-28 pl-4 pr-4'>
+              <div className='button-container flex flex-col justify-evenly items-center 
+              w-full min-h-[150px] h-full mt-[10%] mb-[10%] pl-4 pr-4
+              sm:flex-row'>
 
                   {/*Sends user to the contact page */}
                   <Button
-                    className="bg-neutral-900 size"
-                    radius='full'
-                    variant='faded'
-                  >Book now </Button>
+                    className="bg-black w-[70%] rounded-lg p-5
+                    sm:w-[30%] 
+                    md:rounded-full
+                    lg:w-[20%]"
+                    variant='bordered'
+                  ><a href='/'>Book now</a></Button>
 
                   {/*Sends user to the available designs page */}
                   <Button
-                    className="bg-neutral-900"
-                    size="md"
-                    radius='full'
-                    variant='faded'
+                    className="bg-black w-[70%] rounded-lg p-5
+                    sm:w-[30%] 
+                    md:rounded-full
+                    lg:w-[20%]"
+                    variant='bordered'
                   >
                     <a href='/available-designs'>See designs</a>
                   </Button>

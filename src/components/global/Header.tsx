@@ -44,7 +44,12 @@ export default function Header() {
         </NavbarItem>
         <NavbarItem>
           <Link color="foreground" href="/available-designs">
-            Available Designs
+            Designs
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link color="foreground" href="/contact">
+            Contact
           </Link>
         </NavbarItem>
       </NavbarContent>
@@ -57,26 +62,32 @@ export default function Header() {
       {isMenuOpen && (
         <NavbarMenu className="flex items-center bg-black bg-opacity-80">
           <NavbarMenuItem>
-            <Link className="text-3xl mt-5 font-thin" color="foreground" href="/artist/los/page.tsx" size="lg" aria-current="page">
+            <Link className="text-3xl mt-5 font-thin" color="foreground" href="/available-designs" size="lg" aria-current="page">
+              Available Designs
+            </Link>
+          </NavbarMenuItem>
+          <Divider className="bg-gray-500 bg-opacity-45 w-[80%]"/>
+          <NavbarMenuItem>
+            <Link className="text-3xl font-thin" color="foreground" href="/artist/los/page.tsx" size="lg" aria-current="page">
               Los
             </Link>
           </NavbarMenuItem>
-            <Divider className="bg-gray-500 bg-opacity-45"/>
+            <Divider className="bg-gray-500 bg-opacity-45 w-[80%]"/>
           <NavbarMenuItem>
             <Link className="text-3xl font-thin" color="foreground" href="/artist/sam/page.tsx" size="lg" aria-current="page">
               Sam
             </Link>
           </NavbarMenuItem>
-            <Divider className="bg-gray-500 bg-opacity-45"/>
+            <Divider className="bg-gray-500 bg-opacity-45 w-[80%]"/>
           <NavbarMenuItem>
             <Link className="text-3xl font-thin" color="foreground" href="/artist/raye/page.tsx" size="lg" aria-current="page">
               Raye
             </Link>
           </NavbarMenuItem>
-            <Divider className="bg-gray-500 bg-opacity-45"/>
+            <Divider className="bg-gray-500 bg-opacity-45 w-[80%]"/>
           <NavbarMenuItem>
             <Link className="text-3xl font-thin" color="foreground" href="/available-designs" size="lg" aria-current="page">
-              Available Designs
+              Contact
             </Link>
           </NavbarMenuItem>
         </NavbarMenu>
