@@ -4,12 +4,11 @@ import { Card, CardHeader, CardBody, Avatar } from '@nextui-org/react';
 interface TestimonialProps {
   testimonial: string;
   clientName: string;
-  visible: boolean;
 }
 
 const Testimonial: React.FC<TestimonialProps> = ({ testimonial, clientName }) => {
     return (
-        <Card className="max-w-[340px]">
+    <Card className="w-auto lg:w-max-[500px]">
       <CardHeader className="justify-between">
         <div className="flex gap-5">
           <Avatar isBordered radius="full" size="md" src="" />

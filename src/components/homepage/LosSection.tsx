@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { fetchArtist } from '../../backend/api/fetchArtist';
 import Carousel from './Carousel';
-import { Divider, Skeleton } from '@nextui-org/react';
+import { Divider, Skeleton, Card, CardHeader, CardBody, CardFooter } from '@nextui-org/react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 
@@ -41,12 +41,37 @@ const ArtistSection = () => {
 
   return (
     <section 
-    className="artist-section relative justify-self-center w-[90%] h-[90vh] m-0 p-0 overflow-hidden z-20 bg-background">
-      {/* Carousel Background */}
-      {artistData && <Carousel items={artistData.photosCollection.items} reverse={true} />}
+    className="flex artist-section relative justify-self-center justify-center
+     w-[100%] h-[90vh] min-h-[650px] mt-12 p-0 z-20 bg-background">
+      {/* Artist Card Body Section */}
+        <Card className='flex h-[100%] w-[90%] md:max-w-[70%] lg:max-w-[60%]
+        bg-gradient-to-tr from-[#FFB457] to-[FF705B]'>
+          <CardHeader className='h-[15%]'>
+            <h1 className="text-7xl font-bold">{artistData.name}</h1>
+          </CardHeader>
+          <CardBody className='flex overflow-hidden rounded-xl 
+          ml-[5%] mr-[5%] h-[50%] w-auto'>
+            {artistData && <Carousel items={artistData.photosCollection.items} reverse={true} />}
+          </CardBody>
+          <CardFooter className='flex flex-col justify-center h-[35%]'>
+            <div className='flex flex-col w-[80%] justify-center items-center'>
+              <p className='pt-4'>Specializes in black and grey realism, portrait, and religious pieces.</p>   
+              <p>{artistData.bio}</p>  
+            </div>
+            <Divider className="max-w-[85%] mb-8 mt-8" />
+            <div className='contact-grouping flex flex-row 
+            w-[100%] lg:w-[50%] justify-around items-center mb-4'>
+                <a aria-label={`${artistData.name}'s Instagram link.`} 
+                href="http://www.instagram.com/rarebreedinkstudio" 
+                target="_blank" rel="noopener noreferrer">
+                  <FontAwesomeIcon icon={faInstagram} size="2x"/>
+                </a>
+            </div>
+          </CardFooter>
+        </Card>
 
       {/* Slanted Section */}
-      <div className="slanted-section flex flex-row absolute top-0 m-0 h-[105%] w-full bg-neutral-950 opacity-90 text-white z-10">
+      {/* <div className="slanted-section flex flex-row absolute top-0 m-0 h-[105%] w-full bg-neutral-950 opacity-90 text-white z-10">
         <div className="divide-container flex flex-col mr-6 mb-6 h-[70%] w-[38%] justify-center self-center">
 
           <div className='content-container flex flex-col ml-6 mt-2 h-auto w-[90%] items-center text-center'>
@@ -65,13 +90,13 @@ const ArtistSection = () => {
               </div>  
           </div>
         </div>
-      </div>
-      <style jsx>{`
+      </div> */}
+      {/* <style jsx>{`
         .slanted-section {
           clip-path: polygon(0 0, 90% 0, 30% 100%, 0 100%);
           overflow-y:hidden
         }
-      `}</style>
+      `}</style> */}
     </section>
   );
 };

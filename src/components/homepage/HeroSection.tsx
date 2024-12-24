@@ -71,7 +71,7 @@ const HeroSection = () => {
 
 
   return (
-    <section className="hero-section relative flex h-[80vh] pl-4 pr-4 justify-center items-center
+    <section className="hero-section relative flex h-[80vh] pl-4 pr-4 justify-center items-center min-h-[650px]
     sm:h-[85vh]
     md:m-0 md:h-[95vh]">
 

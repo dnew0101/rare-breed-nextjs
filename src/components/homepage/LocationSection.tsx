@@ -41,7 +41,7 @@ const LocationSection = () => {
   if (error) return <div>{error}</div>;
 
   return (
-    <section className="location-section bg-neutral-950 text-neutral-100 p-8 flex flex-col items-center mt-6 mb-10">
+    <section className="location-section bg-neutral-950 text-neutral-100 p-8 flex flex-col items-center min-h-[650px] mt-6 mb-10">
       <h1 className="text-6xl sm:text-7xl font-bold mb-10">{contactSectionData?.sectionTitle}</h1>
 
       <div className='justify-center text-center'>
@@ -53,7 +53,7 @@ const LocationSection = () => {
       </div>
 
 
-      <div className='w-[70vw] map'>
+      <div className='w-[70vw] map mt-10'>
         <div 
           className="flex map-container mt-4 rounded-lg justify-self-center mb-4"
           style={{ overflow: 'hidden', width: '100%', maxWidth: '800px', height: '500px' }}

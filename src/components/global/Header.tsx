@@ -28,17 +28,17 @@ export default function Header() {
       </NavbarBrand>
       <NavbarContent className="hidden sm:flex justify-items-end gap-4" justify="center">
         <NavbarItem>
-          <Link color="foreground" href="/artist/los/page.tsx" aria-label="Los page">
+          <Link color="foreground" href="/artist/los" aria-label="Los page">
             Los
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="/artist/sam/page.tsx" aria-label="Sam page">
+          <Link color="foreground" href="/artist/sam" aria-label="Sam page">
             Sam
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="/artist/raye/page.tsx" aria-label="Raye page">
+          <Link color="foreground" href="/artist/raye" aria-label="Raye page">
             Raye
           </Link>
         </NavbarItem>
@@ -68,19 +68,19 @@ export default function Header() {
           </NavbarMenuItem>
           <Divider className="bg-gray-500 bg-opacity-45 w-[80%]"/>
           <NavbarMenuItem>
-            <Link className="text-3xl font-thin" color="foreground" href="/artist/los/page.tsx" size="lg" aria-current="page">
+            <Link className="text-3xl font-thin" color="foreground" href="/artist/los" size="lg" aria-current="page">
               Los
             </Link>
           </NavbarMenuItem>
             <Divider className="bg-gray-500 bg-opacity-45 w-[80%]"/>
           <NavbarMenuItem>
-            <Link className="text-3xl font-thin" color="foreground" href="/artist/sam/page.tsx" size="lg" aria-current="page">
+            <Link className="text-3xl font-thin" color="foreground" href="/artist/sam" size="lg" aria-current="page">
               Sam
             </Link>
           </NavbarMenuItem>
             <Divider className="bg-gray-500 bg-opacity-45 w-[80%]"/>
           <NavbarMenuItem>
-            <Link className="text-3xl font-thin" color="foreground" href="/artist/raye/page.tsx" size="lg" aria-current="page">
+            <Link className="text-3xl font-thin" color="foreground" href="/artist/raye" size="lg" aria-current="page">
               Raye
             </Link>
           </NavbarMenuItem>
