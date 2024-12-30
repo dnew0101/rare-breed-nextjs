@@ -30,7 +30,7 @@ const DesignCard: React.FC<DesignCardProps> = ({ image, designName, artistName, 
       <CardFooter className='flex flex-col'>
         <div className='flex justify-around w-[90%]'>
           <Chip color="success" variant="faded">${price}</Chip>
-          <Chip color="success" variant="faded">{size}</Chip>
+          <Chip color="warning" variant="faded">{size}</Chip>
         </div>
         {notes ? (
           <Popover 

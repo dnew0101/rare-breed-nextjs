@@ -44,8 +44,9 @@ const TestimonialSection = () => {
   return (
     <section className="testimonial-section flex flex-col justify-center 
     h-[80vh] min-h-[650px] mt-6 w-[80%] justify-self-center">
-      <h1 className="flex text-6xl sm:text-7xl font-bold text-neutral-100
-       drop-shadow-lg mb-14 justify-center">
+      <h1 className="flex text-6xl sm:text-7xl font-thin text-neutral-100
+       drop-shadow-lg mb-14 justify-center"
+       style={{ fontFamily: 'Montserrat, sans-serif' }}>
         Reviews
       </h1>
       

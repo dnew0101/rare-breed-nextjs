@@ -47,7 +47,7 @@ const ArtistSection = () => {
         <Card className='flex h-[100%] w-[90%] md:max-w-[70%] lg:max-w-[60%]
         bg-gradient-to-tr from-[#FFB457] to-[FF705B]'>
           <CardHeader className='flex h-[15%] justify-center'>
-            <h1 className="text-7xl font-bold mt-8 mb-4" style={{ fontFamily: 'TrueLies, sans-serif' }}>{artistData.name}</h1>
+            <h1 className="text-7xl font-thin mt-8 mb-4" style={{ fontFamily: 'Montserrat, sans-serif' }}>{artistData.name}</h1>
           </CardHeader>
           <CardBody className='flex overflow-hidden rounded-xl 
           ml-[5%] mr-[5%] mt-[5%] 

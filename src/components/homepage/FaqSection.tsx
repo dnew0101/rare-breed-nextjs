@@ -51,14 +51,15 @@ const FaqSection: React.FC = () => {
 
   return (
     <section className="faq-section flex flex-col text-center items-center text-neutral-100 p-8 mt-6 mb-10 min-h-[650px]">
-      <h1 className="text-6xl sm:text-7xl font-bold mb-16">
+      <h1 className="text-6xl sm:text-7xl font-thin mb-10" style={{ fontFamily: 'Montserrat, sans-serif' }}>
         <span className="block sm:hidden">FAQs</span>
         <span className="hidden sm:block">Frequently Asked Questions</span>
       </h1>
-    <div className='content-container flex flex-col flex-start items-center w-full'>
+    <div className='content-container flex flex-col flex-start items-center w-[80%]'>
       <Tabs
-        size='sm'
-        className='max-w-90% w-auto h-auto'
+        variant='underlined'
+        size='md'
+        className='max-w-90% w-auto h-auto sm:text-lg'
         aria-label='FAQ Tabs'
         selectedKey={activeTab}
         onSelectionChange={(key) => setActiveTab(key as string)}
@@ -77,9 +78,9 @@ const FaqSection: React.FC = () => {
               key={index} 
               title={tag}
               className={activeTab === tag ? 'active-tab-class' : ''}
-              style={{ height: 'auto', width: 'auto' }}
+              style={{ height: 'auto', width: 'auto', fontFamily: 'Montserrat, sans-serif' }}
             >
-              <Accordion variant='shadow' className='w-[100%] sm:w-[70vw] h-auto mt-8 mb-8 self-center justify-self-center bg-background'
+              <Accordion variant='shadow' className='w-[80%] sm:w-[70vw] h-auto mt-8 mb-8 self-center justify-self-center bg-background opacity-75'
                   motionProps={{
                       variants: {
                       enter: {

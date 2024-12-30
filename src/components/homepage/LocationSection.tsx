@@ -42,11 +42,13 @@ const LocationSection = () => {
 
   return (
     <section className="location-section text-neutral-100 p-8 flex flex-col items-center min-h-[650px] mt-6 mb-10">
-      <h1 className="text-6xl sm:text-7xl font-bold mb-10">{contactSectionData?.sectionTitle}</h1>
+      <h1 className="text-6xl sm:text-7xl font-thin mb-10" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+        {contactSectionData?.sectionTitle}</h1>
 
-      <div className='justify-center text-center'>
+      <div className='justify-center text-center font-thin'
+      style={{ fontFamily: 'Montserrat, sans-serif' }}>
         <p className="mb-2">
-          Phone: <a href={`tel:${contactSectionData?.phoneNumber}`} className="text-blue-500 underline">{contactSectionData?.phoneNumber}</a>
+          Phone: <a href={`tel:${contactSectionData?.phoneNumber}`} className="text-indigo-300 underline"><span className='font-light'>{contactSectionData?.phoneNumber}</span></a>
         </p>
         <p className="mb-2">Address: {contactSectionData?.shopAddress}</p>
         <p>Appointment Only!</p>
