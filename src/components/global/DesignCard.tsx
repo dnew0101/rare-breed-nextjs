@@ -14,7 +14,7 @@ interface DesignCardProps {
 const DesignCard: React.FC<DesignCardProps> = ({ image, designName, artistName, price, size, notes }) => {
   
   return (
-    <Card className='p-4'>
+    <Card className='p-4 opacity-80'>
       <CardHeader className="flex pb-0 pt-2 px-4 flex-col text-center self-center sm:h-16 sm:px-2">
         <h4 className="font-medium text-large">&quot;{designName}&quot;</h4>
         <h3 className="font-light text-default-500">by {artistName}</h3>

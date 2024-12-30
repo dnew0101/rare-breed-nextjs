@@ -22,6 +22,8 @@ const Meta = () => {
         
         <link rel="canonical" href="https://rarebreedinkstudio.com" />
 
+        <link rel="preload" href="/_next/static/media/Desktop_Hero.c255fe36.webp" as="image" />
+
         {/* Structured Data for the Tattoo Studio */}
         <script type="application/ld+json">
             {JSON.stringify({

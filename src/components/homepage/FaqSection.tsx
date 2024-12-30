@@ -50,7 +50,7 @@ const FaqSection: React.FC = () => {
   tags = tags.sort((a, b) => (a === 'General' ? -1 : b === 'General' ? 1 : 0));
 
   return (
-    <section className="faq-section flex flex-col text-center items-center bg-neutral-950 text-neutral-100 p-8 mt-6 mb-10 min-h-[650px]">
+    <section className="faq-section flex flex-col text-center items-center text-neutral-100 p-8 mt-6 mb-10 min-h-[650px]">
       <h1 className="text-6xl sm:text-7xl font-bold mb-16">
         <span className="block sm:hidden">FAQs</span>
         <span className="hidden sm:block">Frequently Asked Questions</span>
@@ -79,7 +79,7 @@ const FaqSection: React.FC = () => {
               className={activeTab === tag ? 'active-tab-class' : ''}
               style={{ height: 'auto', width: 'auto' }}
             >
-              <Accordion variant='bordered' className='w-[100%] sm:w-[70vw] h-auto mt-8 mb-8 self-center justify-self-center'
+              <Accordion variant='shadow' className='w-[100%] sm:w-[70vw] h-auto mt-8 mb-8 self-center justify-self-center bg-background'
                   motionProps={{
                       variants: {
                       enter: {

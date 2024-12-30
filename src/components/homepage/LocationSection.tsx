@@ -41,7 +41,7 @@ const LocationSection = () => {
   if (error) return <div>{error}</div>;
 
   return (
-    <section className="location-section bg-neutral-950 text-neutral-100 p-8 flex flex-col items-center min-h-[650px] mt-6 mb-10">
+    <section className="location-section text-neutral-100 p-8 flex flex-col items-center min-h-[650px] mt-6 mb-10">
       <h1 className="text-6xl sm:text-7xl font-bold mb-10">{contactSectionData?.sectionTitle}</h1>
 
       <div className='justify-center text-center'>

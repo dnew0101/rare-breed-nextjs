@@ -71,9 +71,8 @@ const HeroSection = () => {
 
 
   return (
-    <section className="hero-section relative flex h-[80vh] pl-4 pr-4 justify-center items-center min-h-[650px]
-    sm:h-[85vh]
-    md:m-0 md:h-[95vh]">
+    <section className="hero-section relative flex h-[100vh] pl-4 pr-4 justify-center items-center min-h-[650px]
+    md:m-0">
 
         <div className='mobile-container absolute flex flex-col w-full h-[100%] overflow-hidden
         md:absolute md:h-full md:rounded-none'>
@@ -85,7 +84,7 @@ const HeroSection = () => {
               fill
               priority
             />
-            <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+            <div className="absolute inset-0 bg-black bg-opacity-60 "></div>
             <div className='content-container absolute flex flex-col h-full w-full'>
               <div className="text-container flex flex-col items-center justify-center text-center 
               mt-10 p-4
@@ -96,7 +95,7 @@ const HeroSection = () => {
                   alt="Rare Breed Logo"
                   width={0}
                   height={0}
-                  className='h-[220px] w-[220px] md:h-[300px] md:w-[300px]'
+                  className='h-[200px] w-[200px] md:h-[200px] md:w-[200px]'
                 />
 
                 {/* <h1 className="text-6xl text-neutral-100 drop-shadow-lg
@@ -108,7 +107,7 @@ const HeroSection = () => {
                 </div>
 
               <div className='button-container flex flex-col justify-evenly items-center 
-              w-full min-h-[150px] h-full mt-[10%] mb-[10%] pl-4 pr-4
+              w-full min-h-[150px] h-[50%] mt-[6%] mb-[10%] pl-4 pr-4
               sm:flex-row'>
 
                   {/*Sends user to the contact page */}

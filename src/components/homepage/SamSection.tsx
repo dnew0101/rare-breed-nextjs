@@ -43,13 +43,13 @@ const ArtistSection = () => {
   return (
     <section 
     className="flex artist-section relative justify-self-center justify-center
-     w-[100%] h-[90vh] min-h-[650px] mt-12 p-0 z-20 bg-background">
+     w-[100%] h-[90vh] min-h-[650px] mt-12 p-0 z-20">
 
       {/* Card with Carousel Body */}
 
       <Card className='h-[100%] w-[90%] md:max-w-[70%] lg:max-w-[60%]'>
         <CardHeader className='h-[20%]'>
-          <h1 className="text-7xl font-bold mb-6 self-center">{artistData.name}</h1>
+          <h1 className="text-7xl font-bold mb-6 self-center" style={{ fontFamily: 'TrueLies, sans-serif' }}>{artistData.name}</h1>
         </CardHeader>
         <CardBody className='overflow-hidden h-[45%]'>
           {artistData && <Carousel items={artistData.photosCollection.items} reverse={false} />}

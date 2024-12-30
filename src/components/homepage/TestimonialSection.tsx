@@ -35,17 +35,17 @@ const TestimonialSection = () => {
 
   if (loading) {
     return (
-      <section className="testimonial-section bg-neutral-950 flex flex-col items-center">
+      <section className="testimonial-section flex flex-col items-center">
         <Skeleton className='h-[100vh] w-[100vw]' />
       </section>
     );
   }
 
   return (
-    <section className="testimonial-section bg-neutral-950 flex flex-col items-center justify-center 
+    <section className="testimonial-section flex flex-col justify-center 
     h-[80vh] min-h-[650px] mt-6 w-[80%] justify-self-center">
-      <h1 className="text-6xl sm:text-7xl font-bold text-neutral-100
-       drop-shadow-lg mb-14 self-start">
+      <h1 className="flex text-6xl sm:text-7xl font-bold text-neutral-100
+       drop-shadow-lg mb-14 justify-center">
         Reviews
       </h1>
       

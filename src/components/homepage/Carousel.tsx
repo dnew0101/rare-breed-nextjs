@@ -37,8 +37,8 @@ const Carousel: React.FC<CarouselProps> = ({ items, reverse = false }) => {
     <div className="relative h-full m-0" style={{ whiteSpace: 'nowrap' }}>
       <div
         ref={carouselRef}
-        className={`flex h-full ${reverse ? 'reverse-scroll' : 'normal-scroll'}`}
-        style={{ width: `${items.length * 1000}px`, height: 'auto'}}
+        className={`flex h-full ${reverse ? 'reverse-scroll' : 'normal-scroll'} overflow-hidden`}
+        style={{ width: `${items.length * 400}px`, height: 'auto'}}
       >
         {items.concat(items).map((photo, index) => (
           <Image
@@ -48,8 +48,8 @@ const Carousel: React.FC<CarouselProps> = ({ items, reverse = false }) => {
             alt={photo.description || photo.title || `Photo ${photo.sys.id}` || ''}
             width={0}
             height={0}
-            className="object-cover"
-            style={{ flex: '0 0 auto', borderRadius: '0', width: 'auto', height: '900px' }}
+            className="object-cover h-[400px] w-[auto] sm:h-[500px]"
+            style={{ flex: '0 0 auto', borderRadius: '0' }}
             />
         ))}
       </div>

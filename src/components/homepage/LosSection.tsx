@@ -41,16 +41,17 @@ const ArtistSection = () => {
 
   return (
     <section 
-    className="flex artist-section relative justify-self-center justify-center
-     w-[100%] h-[90vh] min-h-[650px] mt-12 p-0 z-20 bg-background">
+    className="flex artist-section relative justify-self-center justify-center w-[100%] h-[90vh] min-h-[650px] mt-12 p-0 z-20">
       {/* Artist Card Body Section */}
+
         <Card className='flex h-[100%] w-[90%] md:max-w-[70%] lg:max-w-[60%]
         bg-gradient-to-tr from-[#FFB457] to-[FF705B]'>
-          <CardHeader className='h-[15%]'>
-            <h1 className="text-7xl font-bold">{artistData.name}</h1>
+          <CardHeader className='flex h-[15%] justify-center'>
+            <h1 className="text-7xl font-bold mt-8 mb-4" style={{ fontFamily: 'TrueLies, sans-serif' }}>{artistData.name}</h1>
           </CardHeader>
           <CardBody className='flex overflow-hidden rounded-xl 
-          ml-[5%] mr-[5%] h-[50%] w-auto'>
+          ml-[5%] mr-[5%] mt-[5%] 
+          h-[300px] sm:h-[400px] w-auto'>
             {artistData && <Carousel items={artistData.photosCollection.items} reverse={true} />}
           </CardBody>
           <CardFooter className='flex flex-col justify-center h-[35%]'>
@@ -58,7 +59,7 @@ const ArtistSection = () => {
               <p className='pt-4'>Specializes in black and grey realism, portrait, and religious pieces.</p>   
               <p>{artistData.bio}</p>  
             </div>
-            <Divider className="max-w-[85%] mb-8 mt-8" />
+            <Divider className="max-w-[85%] mb-6 mt-6" />
             <div className='contact-grouping flex flex-row 
             w-[100%] lg:w-[50%] justify-around items-center mb-4'>
                 <a aria-label={`${artistData.name}'s Instagram link.`} 
@@ -90,8 +91,8 @@ const ArtistSection = () => {
               </div>  
           </div>
         </div>
-      </div> */}
-      {/* <style jsx>{`
+      </div>
+      <style jsx>{`
         .slanted-section {
           clip-path: polygon(0 0, 90% 0, 30% 100%, 0 100%);
           overflow-y:hidden

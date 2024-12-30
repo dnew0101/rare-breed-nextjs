@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
+/* @font-face {
   font-family: 'BridgersBrush';
   src: url(../fonts/BridgersBrush.woff) format('woff');
   font-weight: normal;
@@ -16,7 +16,7 @@
   font-weight: normal;
   font-style: normal;
   font-display: swap;
-}
+} */
 
 @font-face {
   font-family: 'TrueLies';
@@ -26,7 +26,7 @@
   font-display: swap;
 }
 
-@font-face {
+/* @font-face {
   font-family: 'Montserrat';
   src: url('../fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
   font-weight: 100 900;
@@ -40,15 +40,14 @@
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
-}
+} */
 
 @font-face {
-  font-family: 'Inter';
-  src: url('https://fonts.gstatic.com/s/inter/v12/UcCO3Fwr0p9g3k3PpQ.woff2') format('woff2'),
-       url('https://fonts.gstatic.com/s/inter/v12/UcCO3Fwr0p9g3k3PpQ.woff') format('woff');
-  font-weight: 100 900;
+  src: url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap');
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
   font-style: normal;
-  font-display: swap;
 }
 
 :root {
@@ -88,5 +87,23 @@ h1 {
   }
 }
 
+.animation-pulse5s {
+  animation: pulse 5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
 
-/*****SWIPER CUSTOM CSS*****/
+.animation-pulse6s {
+  animation: pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animation-pulse7s {
+  animation: pulse 7s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}

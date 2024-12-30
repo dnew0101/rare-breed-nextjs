@@ -2,7 +2,7 @@ import { GraphQLClient, gql } from 'graphql-request';
 
 const endpoint = `https://graphql.contentful.com/content/v1/spaces/${process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID}`;
 
-interface Photo {
+export default interface Photo {
     sys: {
       id: string;
     };
