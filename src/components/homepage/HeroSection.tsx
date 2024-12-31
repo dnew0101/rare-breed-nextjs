@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
-// import { fetchHeroSection } from '../../backend/api/fetchHeroSection';
+import { fetchHeroSection } from '../../backend/api/fetchHeroSection';
 import { Button } from '@nextui-org/react';
 import Rare_Breed_Logo from '../../../public/images/Rare_Breed_Logo.webp';
 import LosGrabbingInkBottle4k from '../../../public/images/Hero-Photos-webp/LosGrabbingInkBottle4k.webp';
@@ -11,33 +11,33 @@ import Desktop_Hero from '../../../public/images/Hero-Photos-webp/Desktop_Hero.w
 const HeroSection = () => {
   
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  // const [heroData, setHeroData] = useState<any>(null);
-  // const [loading, setLoading] = useState(false);
+  const [heroData, setHeroData] = useState<any>(null);
+  const [loading, setLoading] = useState(false);
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  // const [error, setError] = useState<any>(null);
+  const [error, setError] = useState<any>(null);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
 
 
-    //--In favor of making hero photos local--
-    //Keeping code block around for reference
+    // --In favor of making hero photos local--
+    // Keeping code block around for reference
 
-    // const fetchHeroData = async () => {
-    //   try {
+    const fetchHeroData = async () => {
+      try {
         
-    //     const heroContent = await fetchHeroSection(`${process.env.NEXT_PUBLIC_CONTENTFUL_HERO_ID}`);
-    //     setHeroData(heroContent);
+        const heroContent = await fetchHeroSection(`${process.env.NEXT_PUBLIC_CONTENTFUL_HERO_ID}`);
+        setHeroData(heroContent);
 
-    //     setLoading(false);
-    //   } catch (error) {
-    //     setError(error);
-    //     setLoading(false);
-    //   }
-    // };
+        setLoading(false);
+      } catch (error) {
+        setError(error);
+        setLoading(false);
+      }
+    };
 
-    // fetchHeroData();
+    fetchHeroData();
 
 
     //check initial screen width for mobile/desktop image rendering
@@ -76,33 +76,34 @@ const HeroSection = () => {
 
         <div className='mobile-container absolute flex flex-col w-full h-[100%] overflow-hidden
         md:absolute md:h-full md:rounded-none'>
-            <Image
+            {/* <Image
               src={heroImageUrl}
               alt={'Hero Image'}
               quality={40}
-              className='h-auto w-auto'
+              className='h-auto w-auto '
               fill
               priority
-            />
-            <div className="absolute inset-0 bg-black bg-opacity-60 "></div>
+            /> */}
             <div className='content-container absolute flex flex-col h-full w-full'>
               <div className="text-container flex flex-col items-center justify-center text-center 
               mt-10 p-4
               sm:mt-14
               md:mt-24">
-                <Image
+                {/* <Image
                   src={Rare_Breed_Logo}
                   alt="Rare Breed Logo"
                   width={0}
                   height={0}
                   className='h-[200px] w-[200px] md:h-[200px] md:w-[200px]'
-                />
+                /> */}
 
-                {/* <h1 className="text-6xl text-neutral-100 drop-shadow-lg
-                md:text-9xl">
-                  {heroData.heroTitle}
+                <h1 className="text-6xl text-neutral-100 drop-shadow-lg
+                md:text-9xl font-thin"
+                style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                  {heroData?.heroTitle}
                 </h1>
-                <p className="text-white text-xs mt-8">{heroData.subtitle}</p> */}
+                <p className="text-white text-s mt-8 font-light"
+                style={{ fontFamily: 'Montserrat, sans-serif' }}>{heroData?.subtitle}</p>
                 
                 </div>
 
@@ -112,7 +113,7 @@ const HeroSection = () => {
 
                   {/*Sends user to the contact page */}
                   <Button
-                    className="bg-black w-[70%] rounded-lg p-5
+                    className="bg-background w-[70%] rounded-lg p-5
                     sm:w-[30%] 
                     md:rounded-full
                     lg:w-[20%]"
@@ -121,7 +122,7 @@ const HeroSection = () => {
 
                   {/*Sends user to the available designs page */}
                   <Button
-                    className="bg-black w-[70%] rounded-lg p-5
+                    className="bg-background w-[70%] rounded-lg p-5
                     sm:w-[30%] 
                     md:rounded-full
                     lg:w-[20%]"

@@ -56,7 +56,7 @@ const ArtistSection = () => {
           <CardFooter className='flex flex-col justify-center h-[35%]'>
             <div className='flex flex-col w-[80%] justify-center items-center'>
               <p className='pt-4'>Specializes in black and grey realism, portrait, and religious pieces.</p>   
-              <p>{artistData.bio}</p>  
+              <p>{artistData.style}</p>  
             </div>
             <Divider className="max-w-[85%] mb-6 mt-6" />
             <div className='contact-grouping flex flex-row 

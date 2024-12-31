@@ -50,16 +50,24 @@ const FaqSection: React.FC = () => {
   tags = tags.sort((a, b) => (a === 'General' ? -1 : b === 'General' ? 1 : 0));
 
   return (
-    <section className="faq-section flex flex-col text-center items-center text-neutral-100 p-8 mt-6 mb-10 min-h-[650px]">
+    <section className="faq-section flex flex-col text-center items-center text-neutral-100 p-8 
+    ml-2 mr-2 mt-6 mb-10 min-h-[650px]">
       <h1 className="text-6xl sm:text-7xl font-thin mb-10" style={{ fontFamily: 'Montserrat, sans-serif' }}>
         <span className="block sm:hidden">FAQs</span>
         <span className="hidden sm:block">Frequently Asked Questions</span>
       </h1>
-    <div className='content-container flex flex-col flex-start items-center w-[80%]'>
+    <div className='content-container flex flex-col flex-start items-center w-[80%] sm:w-[100%]'>
+      {/*
+      "classNames" is how NextJS allows for internal styling of their proprietary components.
+      Adjusts the TabList and TabContent styles for better responsive design and readability.
+      Keep this in mind for future maintenance or changes to the FAQ section.
+      */}
       <Tabs
         variant='underlined'
-        size='md'
-        className='max-w-90% w-auto h-auto sm:text-lg'
+        size='sm'
+        classNames={{ 
+          tabList: 'gap-0 sm:gap-4', 
+          tabContent: 'text-xs sm:text-small md:text-medium' }}
         aria-label='FAQ Tabs'
         selectedKey={activeTab}
         onSelectionChange={(key) => setActiveTab(key as string)}
@@ -72,6 +80,8 @@ const FaqSection: React.FC = () => {
         Accordion: https://nextui.org/docs/components/accordion
         
         Styles were mostly adopted from default NextJS with minor stylistic tweaks
+
+        ".map()" operates similarly to ".forEach()" but returns a new array with the results of the function.
         */}
         {tags.map((tag, index) => (
             <Tab 
@@ -80,7 +90,7 @@ const FaqSection: React.FC = () => {
               className={activeTab === tag ? 'active-tab-class' : ''}
               style={{ height: 'auto', width: 'auto', fontFamily: 'Montserrat, sans-serif' }}
             >
-              <Accordion variant='shadow' className='w-[80%] sm:w-[70vw] h-auto mt-8 mb-8 self-center justify-self-center bg-background opacity-75'
+              <Accordion variant='shadow' className='w-[80vw] md:w-[70vw] lg:w-[60vw] h-auto mt-8 mb-8 self-center justify-self-center bg-background opacity-75'
                   motionProps={{
                       variants: {
                       enter: {

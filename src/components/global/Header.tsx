@@ -28,9 +28,10 @@ export default function Header() {
       <NavbarBrand className="items-center mr-1">
         <Link className="font-bold text-inherit" href="/">
           <RBLogo />
-          <p className="opacity-0 md:opacity-100 mt-1 ml-2 text-xl font-extralight">Rare Breed Ink</p>
+          <p className="hidden md:block mt-1 ml-2 text-xl font-extralight">Rare Breed Ink</p>
         </Link>
       </NavbarBrand>
+
       <NavbarContent className="hidden lg:flex justify-items-end gap-4" justify="center">
       <NavbarItem>
           <Dropdown className="bg-background bg-opacity-90">
