@@ -5,7 +5,8 @@ import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 const Footer = () => {
     return (
       <footer>
-        <div className="content-container flex flex-col text-center justify-center items-center">
+        <div className="content-container flex flex-col text-center justify-center items-center"
+        style={{ fontFamily: 'Montserrat, sans-serif' }}>
           <p>Photography by <a aria-label="Shop photographer's Instagram page." className="underline" href="https://www.instagram.com/chelsea_tornga_photography/">@chelsea_tornga_photography</a></p>
           <p className="mt-2">👇🏽 Talk with us today! 👇🏽</p>
 

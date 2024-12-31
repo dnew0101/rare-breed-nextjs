@@ -49,7 +49,6 @@ const TestimonialSection = () => {
        style={{ fontFamily: 'Montserrat, sans-serif' }}>
         Reviews
       </h1>
-      
     </section>
   );
 };

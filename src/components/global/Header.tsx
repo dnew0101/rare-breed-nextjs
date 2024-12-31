@@ -118,6 +118,14 @@ export default function Header() {
 
           <NavbarMenuItem>
             <Link className="text-2xl" color="foreground" href="/available-designs" size="lg" aria-current="page">
+              About
+            </Link>
+          </NavbarMenuItem>
+
+          <Divider className="bg-gray-500 bg-opacity-45 w-[8%] mt-1 mb-2"/>
+
+          <NavbarMenuItem>
+            <Link className="text-2xl" color="foreground" href="/available-designs" size="lg" aria-current="page">
               Contact
             </Link>
           </NavbarMenuItem>

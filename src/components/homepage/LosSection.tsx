@@ -44,8 +44,7 @@ const ArtistSection = () => {
     className="flex artist-section relative justify-self-center justify-center w-[100%] h-[90vh] min-h-[650px] mt-12 p-0 z-20">
       {/* Artist Card Body Section */}
 
-        <Card className='flex h-[100%] w-[90%] md:max-w-[70%] lg:max-w-[60%]
-        bg-gradient-to-tr from-[#FFB457] to-[FF705B]'>
+        <Card className='flex h-[100%] w-[90%] md:max-w-[70%] lg:max-w-[60%] opacity-75'>
           <CardHeader className='flex h-[15%] justify-center'>
             <h1 className="text-7xl font-thin mt-8 mb-4" style={{ fontFamily: 'Montserrat, sans-serif' }}>{artistData.name}</h1>
           </CardHeader>

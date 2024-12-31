@@ -50,8 +50,8 @@ export default function RootLayout({
 
                 <div className="relative z-10">
                   {children}  
-                </div>            
-              <Footer />
+                  <Footer />
+                </div>
             </div>
           </main>
         </NextUIProvider>

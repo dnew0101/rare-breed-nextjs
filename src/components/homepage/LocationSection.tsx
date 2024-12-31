@@ -55,7 +55,7 @@ const LocationSection = () => {
       </div>
 
 
-      <div className='w-[70vw] map mt-10'>
+      <div className='w-[70vw] map mt-10 opacity-80'>
         <div 
           className="flex map-container mt-4 rounded-lg justify-self-center mb-4"
           style={{ overflow: 'hidden', width: '100%', maxWidth: '800px', height: '500px' }}
