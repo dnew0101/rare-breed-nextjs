@@ -13,6 +13,7 @@ interface Design {
   price: number;
   size: string;
   artistNotes?: string;
+  contact: string;
 }
 
 const AvailableDesigns: React.FC = () => {
@@ -43,6 +44,7 @@ return (
                 price={design.price.toString()}
                 size={design.size}
                 notes={design.artistNotes}
+                contact={design.contact}
               />
             </div>
           ))}

@@ -1,6 +1,7 @@
 // components/DesignCard.tsx
 import React from 'react';
 import { Card, CardHeader, CardFooter, CardBody, Image, Button, Divider, Chip, Popover, PopoverTrigger, PopoverContent } from '@nextui-org/react';
+import Link from 'next/link';
 
 interface DesignCardProps {
   image: string;
@@ -9,11 +10,13 @@ interface DesignCardProps {
   price: string;
   size: string;
   notes?: string;
+  contact: string;
 }
 
-const DesignCard: React.FC<DesignCardProps> = ({ image, designName, artistName, price, size, notes }) => {
+const DesignCard: React.FC<DesignCardProps> = ({ image, designName, artistName, price, size, notes, contact }) => {
   
   return (
+    console.log('DesignCardProps:', { image, designName, artistName, price, size, notes, contact }),
     <Card className='p-4 opacity-80'
     style={{fontFamily: 'Montserrat, san-serif'}}>
       <CardHeader className="flex pb-0 pt-2 px-4 flex-col text-center self-center sm:h-16 sm:px-2">
@@ -71,7 +74,15 @@ const DesignCard: React.FC<DesignCardProps> = ({ image, designName, artistName, 
       <Divider orientation='horizontal' className='mt-4'/>
       </CardFooter>
 
-      <Button radius="full" className='max-w-[60%] self-center font-light p-4 m-1'>Contact Now</Button>
+      <Button 
+        radius="full" 
+        className='max-w-[60%] self-center font-light p-4 m-1'
+      >
+        <Link 
+        href={contact}>
+          Contact Now
+        </Link>
+      </Button>
     </Card> 
   );
 };

@@ -24,7 +24,7 @@ export default function Header() {
   return (
     <Navbar isBordered 
     className={`text-3xl w-full ${isMenuOpen ? "flex items-center bg-black bg-blend-multiply bg-opacity-80 backdrop-saturate-150" 
-      : "bg-background opacity-90 blur-none"}`} 
+      : "bg-background opacity-100 blur-none"}`} 
     style={{ fontFamily: 'Montserrat, sans-serif' }}
     maxWidth="full">
       <NavbarContent justify="start">
