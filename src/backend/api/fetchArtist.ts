@@ -19,6 +19,8 @@ interface Artist {
     id: string;
     name: string;
     bio: string;
+    style: string;
+    seniority: number;
     photosCollection: PhotosCollection;
 }
   
@@ -36,6 +38,7 @@ const query = gql`
     query GetArtist($id: String!) {
         artist(id: $id) {
             name
+            style
             bio
             photosCollection {
                 items {
@@ -50,6 +53,14 @@ const query = gql`
             }
             slug
             buttonText
+            seniority
+            schedule
+            preferredBookingLink
+            instagramLink
+            tikTokLink
+            redditLink
+            threadsLink
+            facebookLink
         }
     }
 `;

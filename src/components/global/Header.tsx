@@ -23,17 +23,21 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   return (
     <Navbar isBordered 
-    className={`text-3xl ${isMenuOpen ? "flex items-center bg-background bg-opacity-90" : "bg-background opacity-90"}`} 
-    style={{ fontFamily: 'Montserrat, sans-serif' }}>
-      <NavbarBrand className="items-center mr-1">
-        <Link className="font-bold text-inherit" href="/">
-          <RBLogo />
-          <p className="hidden md:block mt-1 ml-2 text-xl font-extralight">Rare Breed Ink</p>
-        </Link>
-      </NavbarBrand>
+    className={`text-3xl w-full ${isMenuOpen ? "flex items-center bg-black bg-blend-multiply bg-opacity-80 backdrop-saturate-150" 
+      : "bg-background opacity-90 blur-none"}`} 
+    style={{ fontFamily: 'Montserrat, sans-serif' }}
+    maxWidth="full">
+      <NavbarContent justify="start">
+        <NavbarBrand as="li" className="items-center mr-1">
+          <Link className="font-bold text-inherit" href="/">
+            <RBLogo />
+            <p className="hidden md:block mt-1 ml-2 text-xl font-extralight">Rare Breed Ink</p>
+          </Link>
+        </NavbarBrand>
+      </NavbarContent>
 
       <NavbarContent className="hidden lg:flex justify-items-end gap-4" justify="center">
-      <NavbarItem>
+        <NavbarItem as="li">
           <Dropdown className="bg-background bg-opacity-90">
             <DropdownTrigger>
               <Button color="default" variant="ghost" className="text-md font-extralight">
@@ -53,12 +57,12 @@ export default function Header() {
             </DropdownMenu>
           </Dropdown>
         </NavbarItem>
-        <NavbarItem>
+        <NavbarItem as="li">
           <Link color="foreground" href="/available-designs">
             <Button color="default" variant="ghost" className="text-md font-extralight">Designs</Button>
           </Link>
         </NavbarItem>
-        <NavbarItem>
+        <NavbarItem as="li">
           <Dropdown className="bg-background bg-opacity-90">
             <DropdownTrigger>
               <Button color="default" variant="ghost" className="text-md font-extralight">
@@ -78,7 +82,7 @@ export default function Header() {
             </DropdownMenu>
           </Dropdown>
         </NavbarItem>
-        <NavbarItem>
+        <NavbarItem as="li">
           <Link color="foreground" href="/contact">
             <Button color="default" variant="ghost" className="text-md font-extralight">Contact</Button>
           </Link>

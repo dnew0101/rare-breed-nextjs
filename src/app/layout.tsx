@@ -23,7 +23,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Meta />
-      <body className="antialiased bg-background">
+      <body className="antialiased bg-background"
+      style={{ fontFamily: 'Montserrat, sans-serif' }}>
         <NextUIProvider>
           <main className="dark text-foreground bg-background m-0 p-0 min-h-screen">
             <div className="relative w-full">

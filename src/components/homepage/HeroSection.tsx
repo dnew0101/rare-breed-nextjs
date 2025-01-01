@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { fetchHeroSection } from '../../backend/api/fetchHeroSection';
-import { Button } from '@nextui-org/react';
+import { Button, Card, CardHeader, CardBody, CardFooter } from '@nextui-org/react';
 import Rare_Breed_Logo from '../../../public/images/Rare_Breed_Logo.webp';
 import LosGrabbingInkBottle4k from '../../../public/images/Hero-Photos-webp/LosGrabbingInkBottle4k.webp';
 import Desktop_Hero from '../../../public/images/Hero-Photos-webp/Desktop_Hero.webp';
@@ -107,7 +107,7 @@ const HeroSection = () => {
                 
                 </div>
 
-              <div className='button-container flex flex-col justify-evenly items-center 
+              <div className='button-card-container flex flex-col justify-evenly items-center 
               w-full min-h-[150px] h-[50%] mt-[6%] mb-[10%] pl-4 pr-4
               sm:flex-row'>
 
