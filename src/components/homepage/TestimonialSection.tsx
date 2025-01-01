@@ -1,45 +1,45 @@
 "use client"
-import React, { useEffect, useState, useRef } from 'react';
-import fetchTestimonials from '../../backend/api/fetchTestimonials';
-import Testimonial from './subcomponents/Testimonial';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import React from 'react';
+// import fetchTestimonials from '../../backend/api/fetchTestimonials';
+// import Testimonial from './subcomponents/Testimonial';
+// import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/swiper-bundle.css';
-import { FaChevronLeft, FaChevronRight, FaSpaghettiMonsterFlying } from 'react-icons/fa6';
+// import { FaChevronLeft, FaChevronRight, FaSpaghettiMonsterFlying } from 'react-icons/fa6';
 
-import { EffectCoverflow, Navigation, Pagination } from 'swiper/modules';
-import { Skeleton, Card, CardBody } from '@nextui-org/react';
+// import { EffectCoverflow, Navigation, Pagination } from 'swiper/modules';
+// import { Skeleton, Card, CardBody } from '@nextui-org/react';
 
 
 const TestimonialSection = () => {
-  const [testimonials, setTestimonials] = useState<{ clientName: string; testimonial: string }[]>([]);
-  const [loading, setLoading] = useState(true);
+  // const [testimonials, setTestimonials] = useState<{ clientName: string; testimonial: string }[]>([]);
+  // const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const getTestimonials = async () => {
-      try {
-        const data = await fetchTestimonials();
-        setTestimonials(data);
-        setLoading(false);
-      } catch (error) {
-        console.error('Error fetching testimonials:', error);
-        setLoading(false);
-      }
-    };
+  // useEffect(() => {
+  //   const getTestimonials = async () => {
+  //     try {
+  //       const data = await fetchTestimonials();
+  //       setTestimonials(data);
+  //       setLoading(false);
+  //     } catch (error) {
+  //       console.error('Error fetching testimonials:', error);
+  //       setLoading(false);
+  //     }
+  //   };
 
-    getTestimonials();
-  }, []);
+  //   getTestimonials();
+  // }, []);
 
-  if (loading) {
-    return (
-      <section className="testimonial-section flex flex-col items-center">
-        <Skeleton className='h-[100vh] w-[100vw]' />
-      </section>
-    );
-  }
+  // if (loading) {
+  //   return (
+  //     <section className="testimonial-section flex flex-col items-center">
+  //       <Skeleton className='h-[100vh] w-[100vw]' />
+  //     </section>
+  //   );
+  // }
 
   return (
     <section className="testimonial-section flex flex-col justify-center 

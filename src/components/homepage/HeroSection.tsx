@@ -3,18 +3,18 @@
 import { HeroCards } from './subcomponents/HeroCards';
 import { useEffect, useState } from 'react';
 import { fetchHeroSection } from '../../backend/api/fetchHeroSection';
-import LosGrabbingInkBottle4k from '../../../public/images/Hero-Photos-webp/LosGrabbingInkBottle4k.webp';
-import Desktop_Hero from '../../../public/images/Hero-Photos-webp/Desktop_Hero.webp';
+// import LosGrabbingInkBottle4k from '../../../public/images/Hero-Photos-webp/LosGrabbingInkBottle4k.webp';
+// import Desktop_Hero from '../../../public/images/Hero-Photos-webp/Desktop_Hero.webp';
 
 const HeroSection = () => {
   
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [heroData, setHeroData] = useState<any>(null);
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const [error, setError] = useState<any>(null);
-  const [isMobile, setIsMobile] = useState(false);
+  // // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  // const [error, setError] = useState<any>(null);
+  // const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
 
@@ -28,10 +28,10 @@ const HeroSection = () => {
         const heroContent = await fetchHeroSection(`${process.env.NEXT_PUBLIC_CONTENTFUL_HERO_ID}`);
         setHeroData(heroContent);
 
-        setLoading(false);
+        // setLoading(false);
       } catch (error) {
-        setError(error);
-        setLoading(false);
+        // setError(error);
+        // setLoading(false);
       }
     };
 
@@ -47,7 +47,7 @@ const HeroSection = () => {
   // }
 
   // Set image URL and description based on screen size
-  const heroImageUrl = isMobile ? LosGrabbingInkBottle4k : Desktop_Hero;
+  // const heroImageUrl = isMobile ? LosGrabbingInkBottle4k : Desktop_Hero;
   //alt description for hero image
   // const heroImageDescription = isMobile ? heroData?.heroImageMobile?.description : heroData?.heroImage?.description;
 
