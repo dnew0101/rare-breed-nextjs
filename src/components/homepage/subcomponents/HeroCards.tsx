@@ -13,8 +13,8 @@ type HeroCardsProps = {
 
 export const HeroCards = ({ className, title, buttonText, route }: HeroCardsProps) => {
   return (
-    <Card className={`w-[80vw] h-[275px] opacity-70 bg-gradient-to-tl from-background to-black
-        sm:w-[38vw] sm:h-[420px] 
+    <Card className={`w-[80vw] h-[30vh] opacity-70 bg-gradient-to-tl from-background to-black
+        sm:w-[38vw] sm:h-[43vh] 
         lg:w-[27vw] 
         xl:w-[25vw] 
         ${className}`}>

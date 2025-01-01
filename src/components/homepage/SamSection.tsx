@@ -43,7 +43,7 @@ const ArtistSection = () => {
   return (
     <section 
     className="flex artist-section relative justify-self-center justify-center
-     w-[100%] h-[90vh] min-h-[650px] mt-12 p-0 z-20">
+     w-full h-[90vh] min-h-[650px] mt-12 p-0 z-20">
 
       {/* Card with Carousel Body */}
 

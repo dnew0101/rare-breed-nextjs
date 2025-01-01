@@ -53,7 +53,7 @@ const HeroSection = () => {
 
 
   return (
-    <section className="hero-section relative flex h-[120vh] sm:h-[100vh] pl-4 pr-4 justify-center items-center min-h-[650px]
+    <section className="hero-section relative flex w-full h-[120vh] sm:h-[100vh] pl-4 pr-4 justify-center items-center min-h-[650px]
     md:m-0">
 
         <div className='mobile-container absolute flex flex-col w-full h-[100%] overflow-hidden

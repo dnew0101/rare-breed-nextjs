@@ -10,18 +10,20 @@ import LocationSection from "@/components/homepage/LocationSection";
 export default async function Home() {
   return ( 
   <>
-    <HeroSection />
-    <Divider className="w-[80%] self-center mt-12"/>
-    <LosSection />
-    <Divider className="w-[80%] self-center mt-12"/>
-    <SamSection />
-    <Divider className="w-[80%] self-center mt-12"/>
-    <RayeSection />
-    <Divider className="w-[80%] self-center mt-12"/>
-    <TestimonialSection />
-    <Divider className="w-[80%] self-center"/>
-    <LocationSection />
-    <Divider className="w-[80%] self-center"/>
-    <FaqSection />
+    <main className="flex flex-col items-center justify-center w-full h-full">
+      <HeroSection />
+      <Divider className="w-[80%] mt-12"/>
+      <LosSection />
+      <Divider className="w-[80%] mt-12"/>
+      <SamSection />
+      <Divider className="w-[80%] mt-12"/>
+      <RayeSection />
+      <Divider className="w-[80%] mt-12"/>
+      <TestimonialSection />
+      <Divider className="w-[80%]"/>
+      <LocationSection />
+      <Divider className="w-[80%]"/>
+      <FaqSection />
+    </main>
   </>);
 };

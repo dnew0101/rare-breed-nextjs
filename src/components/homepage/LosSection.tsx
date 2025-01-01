@@ -41,7 +41,7 @@ const ArtistSection = () => {
 
   return (
     <section 
-    className="flex artist-section relative justify-self-center justify-center w-[100%] h-[90vh] min-h-[650px] mt-12 p-0 z-20">
+    className="flex artist-section relative justify-self-center justify-center w-full h-[90vh] min-h-[650px] mt-12 p-0 z-20">
       {/* Artist Card Body Section */}
 
         <Card className='flex h-[100%] w-[90%] md:max-w-[70%] lg:max-w-[60%] opacity-75'>
