@@ -13,7 +13,7 @@ type HeroCardsProps = {
 
 export const HeroCards = ({ className, title, buttonText, route }: HeroCardsProps) => {
   return (
-    <Card className={`w-[80vw] h-[35vh] opacity-70 bg-black border-neutral-800 border-2
+    <Card className={`w-[80vw] h-[35vh] opacity-70 bg-black
         hover:opacity-75 hover:scale-105 hover:text-white transition-transform duration-400
         sm:w-[38vw] sm:h-[43vh] 
         lg:w-[27vw] 

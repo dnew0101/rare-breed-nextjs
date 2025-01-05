@@ -8,7 +8,11 @@ interface TestimonialProps {
 
 const Testimonial: React.FC<TestimonialProps> = ({ testimonial, clientName }) => {
     return (
-    <Card className="w-auto lg:w-max-[500px]">
+    <Card className="w-full justify-self-center bg-black bg-opacity-60 opacity-90 border-2 border-neutral-900
+    sm:w-[70%] 
+    md:w-[60%] 
+    lg:w-full 
+    xl:w-full">
       <CardHeader className="justify-between">
         <div className="flex gap-5">
           <Avatar isBordered radius="full" size="md" src="" />

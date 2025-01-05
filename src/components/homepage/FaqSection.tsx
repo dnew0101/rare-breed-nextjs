@@ -50,7 +50,7 @@ const FaqSection: React.FC = () => {
   tags = tags.sort((a, b) => (a === 'General' ? -1 : b === 'General' ? 1 : 0));
 
   return (
-    <section className="faq-section flex flex-col text-center items-center text-neutral-100 p-8 
+    <section className="faq-section flex flex-col justify-center text-center items-center text-neutral-100 p-8 
     ml-2 mr-2 mt-6 mb-10 min-h-[650px]">
       <h1 className="text-6xl sm:text-7xl font-thin mb-10" style={{ fontFamily: 'Montserrat, sans-serif' }}>
         <span className="block sm:hidden">FAQs</span>

@@ -31,22 +31,25 @@ export default function RootLayout({
               <Header />
               
                 {/* Background animation */}
-                <div className="animated-background fixed inset-0 z-0 pointer-events-none opacity-60 blur-3xl">
+                <div className="flex animated-background fixed inset-0 z-0 pointer-events-none opacity-90 blur-xl
+                md:blur-3xl animate-translateReverse">
+                  <div className="absolute -top-32 -left-80 w-20 h-[160vh] blur-3xl -rotate-45 translate-x-[15vw] 
+                  -translate-y-28 bg-neutral-950 animation-pulse7s mix-blend-multiply opacity-50"></div>
 
-                  <div className="absolute -top-32 -left-80 w-40 h-[160vh] blur-3xl -rotate-45 translate-x-[15vw] 
-                  -translate-y-28 bg-neutral-900 animation-pulse7s mix-blend-multiply opacity-30"></div>
+                  <div className="absolute -top-10 -left-40 w-60 h-[160vh] blur-3xl -rotate-45 translate-x-[25vw] 
+                  -translate-y-28 bg-violet-950 animation-pulse6s mix-blend-multiply opacity-80
+                  md:translate-x-[33vw] md:w-64"></div>
 
-                  <div className="absolute -top-10 -left-40 w-40 h-[160vh] blur-3xl -rotate-45 translate-x-[25vw] 
-                  -translate-y-28 bg-red-900 animation-pulse6s mix-blend-multiply opacity-40"></div>
-
-                  <div className="absolute -top-10 left-0 w-40 h-[160vh] blur-3xl -rotate-45 translate-x-[35vw]
-                  -translate-y-28 bg-red-900 animation-pulse5s mix-blend-multiply opacity-50"></div>
+                  <div className="absolute -top-10 left-0 w-60 h-[160vh] blur-3xl -rotate-45 translate-x-[35vw]
+                  -translate-y-28 bg-red-900 animation-pulse5s mix-blend-multiply opacity-90
+                  md:translate-x-[43vw] md:w-64"></div>
                   
-                  <div className="absolute -top-10 left-24 w-40 h-[160vh] blur-3xl -rotate-45 translate-x-[50vw] 
-                  -translate-y-28 bg-red-900 animation-pulse6s mix-blend-multiply opacity-40"></div>
+                  <div className="absolute -top-10 left-24 w-60 h-[160vh] blur-3xl -rotate-45 translate-x-[50vw] 
+                  -translate-y-28 bg-indigo-900 animation-pulse7s mix-blend-multiply opacity-50
+                  md:translate-x-[58vw] md:w-64"></div>
                   
                   <div className="absolute top-10 left-52 w-40 h-[120vh] blur-3xl -rotate-45 translate-x-[60vw] 
-                  -translate-y-28 bg-red-900 animation-pulse7s mix-blend-multiply opacity-30"></div>                       
+                  -translate-y-28 bg-neutral-950 animation-pulse7s mix-blend-multiply opacity-70"></div>                       
                 </div>
 
                 <div className="relative z-10">

@@ -15,6 +15,16 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      keyframes: {
+        translateReverse: {
+          "0%, 100%": { transform: "translate(0px, 0px) rotate(0deg)" },
+          "50%": { transform: "translate(5vw, -5vw) rotate(8deg)" },
+        },
+      },
+      animation: {
+        rotate: "rotate 6s ease-in-out infinite",
+        translateReverse: "translateReverse 8s ease-in-out infinite",
+      },
     },
   },
   darkMode: "class",
